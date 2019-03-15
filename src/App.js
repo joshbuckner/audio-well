@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import './App.css';
 import Waveform from './components/Waveform/Waveform';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <h1 className="revize">Revize</h1>
+      <div id="App" className="App">
+	      <video muted loop id="myVideo">
+			  	<source id="video-source" type="video/mp4"/>
+				</video>
         <Waveform />
       </div>
     );
