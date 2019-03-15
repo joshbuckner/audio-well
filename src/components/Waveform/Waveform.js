@@ -69,9 +69,6 @@ class Waveform extends Component {
 
         {/* our audio element */}
         <input onChange={inputAudio} type="file" id="input"/>
-        <audio id="audio-element" controls="controls">
-            <source src="" id="audio-source" />
-        </audio>
 
         {/* this SVG is the "background" and progress bar */}
         <svg viewBox="0 0 100 100" className="waveform-container" preserveAspectRatio="none">
@@ -85,6 +82,10 @@ class Waveform extends Component {
                 <clipPath id="waveform-mask"></clipPath>
             </defs>
         </svg>
+
+        <audio id="audio-element" className="audio-element"controls="controls">
+            <source src="" id="audio-source" />
+        </audio>
 
       </div>
     );

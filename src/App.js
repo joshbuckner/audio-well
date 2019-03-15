@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1 style={{textAlign: 'center'}}>Revize</h1>
+        <h1 className="revize">Revize</h1>
         <Waveform />
       </div>
     );
