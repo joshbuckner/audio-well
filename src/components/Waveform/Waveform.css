@@ -1,0 +1,30 @@
+.Waveform {
+  margin: 0;
+  padding: 0 1em;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.waveform-container {
+  max-width: 100%;
+  width: 800px;
+  height: 300px;
+}
+
+.waveform-bg {
+  clip-path: url("#waveform-mask");
+  fill: lightgray;
+}
+
+.waveform-progress {
+  clip-path: url("#waveform-mask");
+  fill: #256EFF;
+}
+
+#input {
+  margin-bottom: 1rem;
+}
