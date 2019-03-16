@@ -39,38 +39,36 @@ class Waveform extends Component {
         	</Row>
           <Container>
           <Row>
-          	<Col>
-          		<div className="notes-container">
-	          		<ul>
-	          			<li onClick={seekAudio} className="list-note oxford-blue">
-	          			<span>(0:49) </span>guitar lead down
-	          			</li>
-	          			<li onClick={seekAudio} className="list-note moonstone-blue">
-	          			<span>(1:37) </span>vocals up
-	          			</li>
-	          			<li onClick={seekAudio} className="list-note fuzz-wuzzy">
-	          			<span>(1:56) </span>remove 2nd half of verse
-	          			</li>
-	          			<li onClick={seekAudio} className="list-note vivid-tangerine">
-	          			<span>(2:10) </span>add post production
-	          			</li>
-	          			<li onClick={seekAudio} className="list-note deep-ruby">
-	          			<span>(2:45) </span>fade out
-	          			</li>
-	          		</ul>
-          		</div>
+          	<Col className="notes-container">
+          		<ul>
+          			<li onClick={seekAudio} className="list-note oxford-blue hvr-push">
+          			<span>(0:49) </span>guitar lead down
+          			</li>
+          			<li onClick={seekAudio} className="list-note moonstone-blue hvr-push">
+          			<span>(1:37) </span>vocals up
+          			</li>
+          			<li onClick={seekAudio} className="list-note fuzz-wuzzy hvr-push">
+          			<span>(1:56) </span>remove 2nd half of verse
+          			</li>
+          			<li onClick={seekAudio} className="list-note vivid-tangerine hvr-push">
+          			<span>(2:10) </span>add post production
+          			</li>
+          			<li onClick={seekAudio} className="list-note deep-ruby hvr-push">
+          			<span>(2:45) </span>fade out
+          			</li>
+          		</ul>
           	</Col>
           </Row>
           </Container>
           <Container>
-          <Row>
-	          <Col>
-	      			<div className="current-time" id="current-time">0:00</div>
-	      		</Col>
-          	<Col>
-          		<button className="add-note">+</button>
-          	</Col>
-          </Row>
+	          <Row>
+		          <Col>
+		      			<div className="current-time" id="current-time">0:00</div>
+		      		</Col>
+	          	<Col>
+	          		<button className="add-note">+</button>
+	          	</Col>
+	          </Row>
           </Container>
         </Container-fluid>
         

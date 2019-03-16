@@ -80,7 +80,7 @@ class App extends Component {
       	<Row>
       		<Col>
         		{/* our audio element */}
-        		<label htmlFor="input" id="lbl-file-picker" className="lbl-file-picker">Import Audio</label>
+        		<label htmlFor="input" id="lbl-file-picker" className="lbl-file-picker hvr-push">Import Audio</label>
         		<input onChange={inputAudio} type="file" id="input" className="file-picker"/>
           </Col>
       	</Row>
