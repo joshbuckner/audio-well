@@ -38,7 +38,7 @@ class Waveform extends Component {
 		let list = [];
 		for (let i = 0; i < this.state.db.length; i++) {
   		list.push(
-  			<Row>
+  			<Row key={i}>
 	  			<Col>
 		  			<li onClick={seekAudio} className={"list-note hvr-push " + this.state.db[i].color}>
 		  				<span>({this.state.db[i].time}) </span>{this.state.db[i].note}
@@ -62,6 +62,7 @@ class Waveform extends Component {
 		let timeStamp = minutes + ":" + seconds;
 		this.setState({db: this.state.db.concat({note: this.state.note, time: timeStamp, color: 'oxford-blue'})});
 		document.getElementById('note-input').value = "";
+		this.setState({note: ''});
 		// .concat({note: 'test note', time: '0:35', color: 'oxford-blue'});
 	}
 
@@ -96,6 +97,14 @@ class Waveform extends Component {
           <Row>
           	<Col className="notes-container">
           		<ul>
+	          		<Row>
+					  			<Col>
+						  			<li onClick={seekAudio} className={"list-note hvr-push deep-ruby"}>
+						  				<span>(0:00) </span>Start
+						  			</li>
+					  				<button onClick={this.deleteNote} className="delete-note">X</button>
+					  			</Col>
+					  		</Row>
           			{this.createList()}
           		</ul>
           	</Col>
