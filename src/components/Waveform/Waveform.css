@@ -138,12 +138,29 @@
 }
 
 .list-note {
+  display: inline-block;
   font-size: 1.5rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: .5rem;
   padding: .1rem .4rem;
   color: white;
   cursor: pointer;
+  margin-bottom: .1rem;
+  width: 90%;
+}
+
+.delete-note {
+  position: absolute;
+  background-color: #bb2124;
+  border: none;
+  border-radius: .5rem;
+  color: white;
+  text-decoration: none;
+  font-size: 3vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+  width: 5vh;
+  margin-left: .25rem;
 }
 
 /* Push */
@@ -174,6 +191,10 @@
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 }
 
+.footer {
+ padding: 3rem;
+}
+
 .current-time {
   font-size: 3vh;
   background-color: rgba(4,40,74,.7);
@@ -202,7 +223,7 @@ input {
   font-size: 3vh;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   cursor: pointer;
-  width: 4vh;
+  width: 5vh;
 }
 
 svg {

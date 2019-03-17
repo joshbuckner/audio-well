@@ -37,7 +37,16 @@ class Waveform extends Component {
 	createList = () => {
 		let list = [];
 		for (let i = 0; i < this.state.db.length; i++) {
-  		list.push(<li onClick={seekAudio} className={"list-note hvr-push " + this.state.db[i].color}><span>({this.state.db[i].time}) </span>{this.state.db[i].note}</li>);
+  		list.push(
+  			<Row>
+	  			<Col>
+		  			<li onClick={seekAudio} className={"list-note hvr-push " + this.state.db[i].color}>
+		  				<span>({this.state.db[i].time}) </span>{this.state.db[i].note}
+		  			</li>
+	  				<button onClick={this.deleteNote} className="delete-note">X</button>
+	  			</Col>
+	  		</Row>
+  		);
 		}
 		return list;
 	}
@@ -54,6 +63,10 @@ class Waveform extends Component {
 		this.setState({db: this.state.db.concat({note: this.state.note, time: timeStamp, color: 'oxford-blue'})});
 		document.getElementById('note-input').value = "";
 		// .concat({note: 'test note', time: '0:35', color: 'oxford-blue'});
+	}
+
+	deleteNote = (event) => {
+		event.target.parentNode.remove()
 	}
 
 	handleNoteInput(event) {
@@ -90,7 +103,7 @@ class Waveform extends Component {
           </Container>
           <Container>
 	          <Row>
-		          <Col>
+		          <Col className="new-note">
 			          <div className="current-time" id="current-time">0:00</div>
 			      		<input id="note-input" type="text" onChange={this.handleNoteInput} />
 		          	<button onClick={this.createNote} className="add-note">+</button>
@@ -98,6 +111,7 @@ class Waveform extends Component {
 	          </Row>
           </Container>
         </Container-fluid>
+        <div className="footer"></div>
       </div>
     );
   }
