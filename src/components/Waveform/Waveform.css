@@ -175,31 +175,34 @@
 }
 
 .current-time {
-  font-size: 2.9rem;
-  padding: 0 .5rem;
+  font-size: 3vh;
   background-color: rgba(4,40,74,.7);
   display: inline-block;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   cursor:pointer;
   color:white;
   border-radius: .5rem;
+  width: 8vh;
 }
 
 input {
-  margin-top: 10%;
+  margin: 0 1rem;
+  font-size: 3vh;
+  border-radius: .5rem;
+  width: 16vh;
+  padding: 0 .5rem;
 }
 
 .add-note {
   background-color: #256EFF;
   border: none;
-  border-radius: 10rem;
+  border-radius: .5rem;
   color: white;
-  padding: 0 1.4rem;
   text-decoration: none;
-  font-size: 3rem;
+  font-size: 3vh;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   cursor: pointer;
-  margin-bottom: 6rem;
+  width: 4vh;
 }
 
 svg {

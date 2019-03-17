@@ -22,12 +22,12 @@ class Waveform extends Component {
 
 		this.state = {
 			db: [
-				{note: 'intro', time: '0:00', color: 'deep-ruby'},
-				{note: 'guitar lead down', time: '0:49', color: 'oxford-blue'},
-				{note: 'vocals up', time: '1:37', color: 'moonstone-blue'},
-				{note: 'remove 2nd half of verse', time: '1:56', color: 'fuzz-wuzzy'},
-				{note: 'add post production', time: '2:10', color: 'vivid-tangerine'},
-				{note: 'fade out', time: '2:45', color: 'deep-ruby'},
+				// {note: 'intro', time: '0:00', color: 'deep-ruby'},
+				// {note: 'guitar lead down', time: '0:49', color: 'oxford-blue'},
+				// {note: 'vocals up', time: '1:37', color: 'moonstone-blue'},
+				// {note: 'remove 2nd half of verse', time: '1:56', color: 'fuzz-wuzzy'},
+				// {note: 'add post production', time: '2:10', color: 'vivid-tangerine'},
+				// {note: 'fade out', time: '2:45', color: 'deep-ruby'},
 			],
 			note: ''
 		};
@@ -91,14 +91,10 @@ class Waveform extends Component {
           <Container>
 	          <Row>
 		          <Col>
-		      			<div className="current-time" id="current-time">0:00</div>
-		      		</Col>
-		      		<Col>
-		      			<input id="note-input" type="text" onChange={this.handleNoteInput} />
-		      		</Col>
-	          	<Col>
-	          		<button onClick={this.createNote} className="add-note">+</button>
-	          	</Col>
+			          <div className="current-time" id="current-time">0:00</div>
+			      		<input id="note-input" type="text" onChange={this.handleNoteInput} />
+		          	<button onClick={this.createNote} className="add-note">+</button>
+		          </Col>
 	          </Row>
           </Container>
         </Container-fluid>
