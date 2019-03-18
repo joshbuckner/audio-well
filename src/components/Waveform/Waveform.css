@@ -90,6 +90,9 @@
 .deep-ruby {
   background-color: rgba(115,62,90,.9);
 }
+.dark-theme {
+  background-color: rgba(45,45,45,.9);
+}
 
 .waveform-container {
   /*margin-left: 2.5rem;*/
@@ -127,7 +130,7 @@
 }
 
 .notes-container {
-  text-align: left;
+  font-family: 'Open Sans', sans-serif;
   margin: .5rem 0;
   padding: 0;
 }
@@ -138,41 +141,48 @@
 }
 
 .list-note {
-  white-space: nowrap;
-  overflow: hidden;
-  display: inline-block;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: .5rem;
-  padding: .1rem .4rem;
+  padding: .2rem .4rem 0;
   color: white;
   cursor: pointer;
-  margin-bottom: .1rem;
-  width: 90%;
+  margin-bottom: .2rem;
+  height: 2.2rem;
 }
 
 .note-time {
   display: inline;
+  background-color: rgba(0,0,0,.3);
+  border-radius: .5rem;
+  padding: .1rem .4rem;
 }
 
 .note-title {
-  display: inline-block;
-  width: 100%;
+
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline;
+  text-align: left;
+  padding-left: .5rem;
+  padding-right: 100%;
+}
+
+.note-expand {
+  display: inline;
+  margin-right: .5rem;
+}
+
+.note-expand-icon {
+  color: white;
+  background-color: transparent;
+  font-size: 1.8rem;
 }
 
 .delete-note {
-  position: absolute;
-  background-color: #bb2124;
-  border: none;
-  border-radius: .5rem;
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  cursor: pointer;
-  width: 1.5rem;
-  padding: 0;
-  margin-left: .25rem;
+  display: inline;
+  font-size: 1.65rem;
+  margin-right: .5rem;
 }
 
 /* Push */
@@ -208,45 +218,56 @@
 }
 
 .current-time {
-  font-size: 3vh;
-  background-color: rgba(4,40,74,.7);
-  display: inline-block;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  cursor:pointer;
-  color:white;
+  display: inline;
+  background-color: rgba(0,0,0,.3);
   border-radius: .5rem;
-  width: 8vh;
+  padding: .1rem .4rem;
 }
 
-input {
-  margin: 0 1rem;
-  font-size: 3vh;
+/*.note-time {
+  display: inline;
+  background-color: rgba(0,0,0,.3);
   border-radius: .5rem;
-  width: 16vh;
-  padding: 0 .5rem;
+  padding: .1rem .4rem;
+}*/
+
+input {
+  background-color:transparent;
+  text-align: center;
+  color: white;
+  font-size: 1.2rem;
+  border-style: none;
+  border-bottom: solid white 2px;
+  border-radius: 0;
+  margin: 0 0 .2rem .5rem;
+  padding: 0;
+  width: 95%;
+}
+
+*:focus {
+    outline: none;
 }
 
 .add-note {
-  background-color: #256EFF;
-  border: none;
-  border-radius: .5rem;
+  display: inline;
+  font-size: 1.2rem;
+  margin-right: .5rem;
+}
+
+.note-add-icon {
   color: white;
-  text-decoration: none;
-  font-size: 3vh;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  cursor: pointer;
-  width: 3rem;
-  max-width: 10%;
-  padding: 0;
+  background-color: transparent;
+  font-size: 1.5rem;
+  padding-top: .2rem;
 }
 
 svg {
   background-color: rgba(255,255,255,.9);
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 992px) {
   .notes-container {
-    padding: 0 15%;
+    padding: 0 10%;
   }
 }
 

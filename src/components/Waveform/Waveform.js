@@ -4,30 +4,48 @@ import './Waveform.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
-const seekAudio = (event) => {
-	let startTime = event.target.parentNode.childNodes[0].innerHTML.slice(1,5)
-	let minutes = Number(startTime.slice(0,1));
-	let seconds = Number(startTime.slice(2,4));
-	const audio = document.getElementById('audio-element');
-	let newCurrentTime = (minutes * 60) + seconds;
-
-	audio.currentTime = newCurrentTime;
-	audio.play();
-}
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Waveform extends Component {
 	constructor(props) {
 		super(props);
-
 		this.state = {
 			db: [
-				{note: 'Start', time: '0:00', color: 'vivid-tangerine'},
+				{note: 'Start', time: '0:00', color: 'vivid-tangerine'}
 			],
-			note: '',
+			note: 'New Note',
 			counter: 0
 		};
 		this.handleNoteInput = this.handleNoteInput.bind(this);
+	}
+
+	// updateNoteTime = (event) => {
+	// 	if (event.target.classList.value === 'col') {
+	// 		// this.setState({ timeStamp: event.target.childNodes[0].value });
+	// 		this.setState({ timeStamp: event.target.childNodes[0].innerHTML });
+	// 	} else {
+	// 		// this.setState({ timeStamp: '' });
+	// 		this.setState({ timeStamp: event.target.parentNode.childNodes[0].innerHTML });
+	// 	}
+	// }
+
+	seekAudio = (event) => {
+		let startTime = event.target.parentNode.childNodes[0].innerHTML;
+		let minutes = Number(startTime.slice(0,1));
+		let seconds = Number(startTime.slice(2,4));
+		const audio = document.getElementById('audio-element');
+		let newCurrentTime = (minutes * 60) + seconds;
+
+		audio.currentTime = newCurrentTime;
+		audio.play();
+	}
+
+	noteExpand = () => {
+		// let currentTime = event.target.parentNode.childNodes[0].innerHTML.slice(0,4)
+	  console.log('note expands downwards');
+	  // let newTime = '1:30';
+	  // this.setState({ time: newTime });
+	  // event.target.innerHTML = this.state.time;
 	}
 
 	createList = () => {
@@ -36,11 +54,19 @@ class Waveform extends Component {
   		list.push(
   			<Row key={i}>
 	  			<Col>
-		  			<li className={"list-note hvr-push " + this.state.db[i].color}>
-							<div className="note-time" onClick={this.consoleLog}>({this.state.db[i].time}) </div>
-							<div className="note-title" onClick={seekAudio}>{this.state.db[i].note}</div>
+		  			<li className={"list-note " + this.state.db[i].color}>
+		  			<Row>
+		  				<Col style={{textAlign: 'left', overflow: 'hidden'}}>
+								<div className="note-time">{this.state.db[i].time}</div>
+								<div onClick={this.seekAudio} className="note-title">{this.state.db[i].note}</div>
+							</Col>
+							<Col xs="2" sm="2" md="1" lg="1" xl="1" style={{paddingLeft: 0}}>
+								<div onClick={this.deleteNote} className="note-expand">
+		  						<FontAwesomeIcon className="note-expand-icon" icon="angle-up" />
+								</div>
+							</Col>
+						</Row>
 		  			</li>
-	  				<button onClick={this.deleteNote} className="delete-note">X</button>
 	  			</Col>
 	  		</Row>
   		);
@@ -49,14 +75,7 @@ class Waveform extends Component {
 	}
 
 	createNote = () => {
-		let audioElement = document.getElementById('audio-element');
-		let timeDisplay = Math.round(audioElement.currentTime - .6);
-		let minutes = Math.floor(timeDisplay / 60);
-		let seconds = timeDisplay % 60;
-		if (seconds < 10) {
-			seconds = "0" + seconds;
-		}
-		let timeStamp = minutes + ":" + seconds;
+		let timeStamp = this.props.time;
 		let colorPallete = ['deep-ruby', 'oxford-blue', 'moonstone-blue', 'fuzz-wuzzy', 'vivid-tangerine'];
 		
 		if (this.state.counter < 4) {
@@ -67,20 +86,15 @@ class Waveform extends Component {
 
 		this.setState({db: this.state.db.concat({note: this.state.note, time: timeStamp, color: colorPallete[this.state.counter]})});
 		document.getElementById('note-input').value = "";
-		this.setState({note: ''});
-		// .concat({note: 'test note', time: '0:35', color: 'oxford-blue'});
+		this.setState({note: 'New Note'});
 	}
 
 	deleteNote = (event) => {
-		event.target.parentNode.remove()
+		event.target.parentNode.parentNode.parentNode.parentNode.parentNode.remove()
 	}
 
 	handleNoteInput(event) {
     this.setState({note: event.target.value});
-  }
-
-  consoleLog = () => {
-  	console.log('hi');
   }
 
 	render() {
@@ -103,23 +117,47 @@ class Waveform extends Component {
         		</Col>
         	</Row>
           <Container>
-          <Row>
-          	<Col className="notes-container">
-          		<ul>
-          			{this.createList()}
-          		</ul>
-          	</Col>
-          </Row>
-          </Container>
-          <Container>
 	          <Row>
-		          <Col className="new-note">
-			          <div className="current-time" id="current-time">0:00</div>
-			      		<input id="note-input" type="text" onChange={this.handleNoteInput} />
-		          	<button onClick={this.createNote} className="add-note">+</button>
-		          </Col>
+	          	<Col className="notes-container">
+	          		<ul>
+	          			{this.createList()}
+		          			<Row>
+							  			<Col>
+								  			<li className="list-note dark-theme">
+								  			<Row>
+								  				<Col>
+									  				<Row>
+									  					<Col xs="4" sm="3" md="2" style={{textAlign: 'left'}}>
+																<div className="current-time" id="current-time">{this.props.time}</div>
+															</Col>
+															<Col xs="8" sm="9" md="10" style={{paddingLeft: '1rem',}}>
+																<input placeholder="New Note" id="note-input" type="text" onChange={this.handleNoteInput} />
+															</Col>
+														</Row>
+													</Col>
+													<Col xs="2" sm="2" md="1" lg="1" xl="1" style={{paddingLeft: 0}}>
+														<div onClick={this.createNote} className="add-note">
+								  						<FontAwesomeIcon className="note-add-icon" icon="plus" />
+														</div>
+													</Col>
+												</Row>
+								  			</li>
+							  			</Col>
+							  		</Row>
+	          		</ul>
+	          	</Col>
 	          </Row>
           </Container>
+          {/*<Container>
+          	          <Row>
+          		          <Col className="new-note">
+          			          <div className="current-time" id="current-time">0:00</div>
+          			      		<input id="note-input" type="text" onChange={this.handleNoteInput} />
+          		          	<button onClick={this.createNote} className="add-note">+</button>
+          		          </Col>
+          	          </Row>
+                    </Container>*/}
+
         </Container-fluid>
         <div className="footer"></div>
       </div>
