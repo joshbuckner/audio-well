@@ -148,7 +148,9 @@
   color: white;
   cursor: pointer;
   margin-bottom: .2rem;
-  height: 2.2rem;
+  overflow: hidden;
+  transition: max-height 600ms;
+  max-height: 2.2rem;
 }
 
 .note-time {
@@ -168,6 +170,11 @@
   padding-right: 100%;
 }
 
+.note-body {
+  text-align: left;
+  margin: 0 2rem;
+}
+
 .note-expand {
   display: inline;
   margin-right: .5rem;
@@ -177,6 +184,7 @@
   color: white;
   background-color: transparent;
   font-size: 1.8rem;
+  transition: transform 500ms;
 }
 
 .delete-note {
@@ -268,6 +276,15 @@ input {
 
 svg {
   background-color: rgba(255,255,255,.9);
+}
+
+.list-note.open {
+  max-height: 60vh; /* <---when open, allow content to expand to take up as much height as it needs, up to e.g. 100px */
+}
+
+
+.note-expand-icon.rotate {
+  transform: rotate(-180deg);
 }
 
 @media (max-width: 768px) {

@@ -102,11 +102,9 @@ class App extends Component {
       	seconds = "00";
       }
       this.setState({time: minutes + ":" + seconds});
-      console.log(this.state.time);
     }, 100);
   }
 	
-
   render() {
     return (
       <div id="App" className="App">

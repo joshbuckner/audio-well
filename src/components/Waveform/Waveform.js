@@ -40,12 +40,12 @@ class Waveform extends Component {
 		audio.play();
 	}
 
-	noteExpand = () => {
-		// let currentTime = event.target.parentNode.childNodes[0].innerHTML.slice(0,4)
-	  console.log('note expands downwards');
-	  // let newTime = '1:30';
-	  // this.setState({ time: newTime });
-	  // event.target.innerHTML = this.state.time;
+	expandNote = (event) => {
+
+	  const toggle = document.querySelector('.list-note');
+	  toggle.classList.toggle('open');
+	  const angleIcon = document.querySelector('.note-expand-icon');
+	  angleIcon.classList.toggle('rotate');
 	}
 
 	createList = () => {
@@ -55,17 +55,22 @@ class Waveform extends Component {
   			<Row key={i}>
 	  			<Col>
 		  			<li className={"list-note " + this.state.db[i].color}>
-		  			<Row>
-		  				<Col style={{textAlign: 'left', overflow: 'hidden'}}>
-								<div className="note-time">{this.state.db[i].time}</div>
-								<div onClick={this.seekAudio} className="note-title">{this.state.db[i].note}</div>
-							</Col>
-							<Col xs="2" sm="2" md="1" lg="1" xl="1" style={{paddingLeft: 0}}>
-								<div onClick={this.deleteNote} className="note-expand">
-		  						<FontAwesomeIcon className="note-expand-icon" icon="angle-up" />
-								</div>
-							</Col>
-						</Row>
+			  			<Row>
+			  				<Col style={{textAlign: 'left', overflow: 'hidden'}}>
+									<div className="note-time">{this.state.db[i].time}</div>
+									<div onClick={this.seekAudio} className="note-title">{this.state.db[i].note}</div>
+								</Col>
+								<Col xs="2" sm="2" md="1" lg="1" xl="1" style={{paddingLeft: 0}}>
+									<div onClick={this.expandNote} className="note-expand">
+			  						<FontAwesomeIcon className="note-expand-icon" icon="angle-up" />
+									</div>
+								</Col>
+							</Row>
+							<Row>
+								<Col>
+									<div className="note-body">test note body here text talking test note body here text talking  note body here text talking test note body here text talking test note body here text talking test note body here text talking  note body here text talking test note body here text talking test note body here text talking about vocal lyrics test note body here text talking about vocal lyrics test note body here</div>
+								</Col>
+							</Row>
 		  			</li>
 	  			</Col>
 	  		</Row>
