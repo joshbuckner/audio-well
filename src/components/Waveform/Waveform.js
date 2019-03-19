@@ -97,6 +97,12 @@ class Waveform extends Component {
     this.setState({note: event.target.value});
   }
 
+  handleKeyPress(event) {
+  	if (event.key === 'Enter') {
+  		this.createNote();
+  	}
+  }
+
 	render() {
     return (
       <div className="Waveform">
@@ -123,17 +129,11 @@ class Waveform extends Component {
 	          			{this.createList()}
 		          			<Row>
 							  			<Col>
-								  			<li className="list-note dark-theme">
+								  			<li className="list-add-note dark-theme">
 								  			<Row>
-								  				<Col>
-									  				<Row>
-									  					<Col xs="4" sm="3" md="2" style={{textAlign: 'left'}}>
-																<div className="current-time" id="current-time">{this.props.time}</div>
-															</Col>
-															<Col xs="8" sm="9" md="10" style={{paddingLeft: '1rem',}}>
-																<input placeholder="New Note" id="note-input" type="text" onChange={this.handleNoteInput} />
-															</Col>
-														</Row>
+								  				<Col style={{textAlign: 'left'}}>
+														<div className="current-time" id="current-time">{this.props.time}</div>
+														<input placeholder="New Note" id="note-input" type="text" onChange={this.handleNoteInput} onKeyPress={this.handleKeyPress.bind(this)}/>
 													</Col>
 													<Col xs="2" sm="2" md="1" lg="1" xl="1" style={{paddingLeft: 0}}>
 														<div onClick={this.createNote} className="add-note">

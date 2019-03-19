@@ -63,6 +63,10 @@ const inputAudio = (event) => {
 	      if (seconds < 10) {
 	      	seconds = "0" + seconds;
 	      }
+	      if (seconds === "0-1") {
+	      	minutes = "0";
+	      	seconds = "00";
+	      }
 	      document.getElementById('current-time').innerHTML = minutes + ":" + seconds;
 
 	    }, 100);
@@ -98,6 +102,7 @@ class App extends Component {
       	seconds = "00";
       }
       this.setState({time: minutes + ":" + seconds});
+      console.log(this.state.time);
     }, 100);
   }
 	
