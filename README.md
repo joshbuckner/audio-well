@@ -8,7 +8,7 @@ StopNote is web application that allows users to create time stamped notes for a
 
 * Play an audio file.
 * Create time stamped notes.
-* Click a note to play audio file at its' time stamp.
+* Click a note to play the audio file at its' time stamp.
 
 <h2>Use Cases</h2>
 
