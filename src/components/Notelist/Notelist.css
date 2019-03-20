@@ -1,0 +1,219 @@
+/*note colors*/
+.oxford-blue {
+  background-color: rgba(4,40,74,.9);
+}
+
+.moonstone-blue {
+  background-color: rgba(116,175,196,.9);
+}
+
+.fuzz-wuzzy {
+  background-color: rgba(200,92,104,.9);
+}
+
+.vivid-tangerine {
+  background-color: rgba(245,159,134,.9);
+}
+
+.deep-ruby {
+  background-color: rgba(115,62,90,.9);
+}
+
+.dark-theme {
+  background-color: rgba(45,45,45,.9);
+}
+
+.Notelist {
+  font-family: sans-serif;
+  text-align: center;
+  margin: .5rem auto;
+  width: 80%;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.notes-container {
+  padding: 0 20%;
+}
+
+.notes-container ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.list-note {
+  font-size: 1.2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: .5rem;
+  padding: .2rem .4rem 0;
+  color: white;
+  cursor: pointer;
+  margin-bottom: .2rem;
+  overflow: hidden;
+  transition: max-height 300ms;
+  max-height: 2.2rem;
+  animation: slide-up 0.4s ease;
+}
+
+.note-time {
+  display: inline;
+  background-color: rgba(0,0,0,.3);
+  border-radius: .5rem;
+  padding: .1rem .4rem;
+}
+
+.note-title {
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline;
+  text-align: left;
+  padding-left: .5rem;
+  padding-right: 100%;
+}
+
+.note-body {
+  font-size: 1rem;
+  text-align: left;
+  margin: .25rem 0 0 .75rem;
+  padding-bottom: .75rem;
+}
+
+.note-expand {
+  display: inline;
+  margin-right: .5rem;
+}
+
+.note-expand-icon {
+  color: white;
+  background-color: transparent;
+  font-size: 1.8rem;
+  transition: transform 200ms;
+}
+
+.note-edit-icon {
+  color: rgba(255,255,255,.8);
+  background-color: transparent;
+  font-size: 1.2rem;
+  margin: .75rem 0 .75rem;
+}
+
+.trash-icon {
+  color: rgba(255,255,255,.7);
+  background-color: transparent;
+  font-size: 1.3rem;
+}
+
+/* Push */
+@-webkit-keyframes hvr-push {
+  50% {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes hvr-push {
+  50% {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.hvr-push {
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.current-time {
+  display: inline;
+  background-color: rgba(0,0,0,.3);
+  border-radius: .5rem;
+  padding: .1rem .4rem;
+  cursor: default;
+}
+
+input {
+  background-color:transparent;
+  text-align: left;
+  color: white;
+  font-size: 1.2rem;
+  border-style: none;
+  border-bottom: solid white 2px;
+  border-radius: 0;
+  margin: 0 0 .2rem .5rem;
+  padding: 0;
+  width: 70%;
+}
+
+*:focus {
+    outline: none;
+}
+
+.list-add-note {
+  font-size: 1.2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: .5rem;
+  padding: .2rem .4rem 0;
+  color: white;
+  margin-bottom: .2rem;
+  height: 2.2rem;
+}
+
+.add-note {
+  display: inline;
+  font-size: 1.2rem;
+  margin-right: .5rem;
+  cursor: pointer;
+}
+
+.note-add-icon {
+  color: white;
+  background-color: transparent;
+  font-size: 1.5rem;
+  padding-top: .2rem;
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.list-note.open {
+  max-height: 60vh; /* <---when open, allow content to expand to take up as much height as it needs, up to e.g. 60vh */
+}
+
+.note-expand-icon.rotate {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+  .notes-container {
+    padding: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hvr-push:hover, .hvr-push:focus, .hvr-push:active {
+    -webkit-animation-name: hvr-push;
+    animation-name: hvr-push;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+  }
+}
