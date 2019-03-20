@@ -1,8 +1,8 @@
 <h1>StopNote</h1>
 <br>
 StopNote is web application that allows users to create time stamped notes for an audio track.
-<br>
 <img src="https://media.giphy.com/media/4No2qHJv7yX704IBxq/giphy.gif">
+<br>
 
 <h2>Features</h2>
 
