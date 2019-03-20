@@ -19,16 +19,6 @@ class Waveform extends Component {
 		this.handleNoteInput = this.handleNoteInput.bind(this);
 	}
 
-	// updateNoteTime = (event) => {
-	// 	if (event.target.classList.value === 'col') {
-	// 		// this.setState({ timeStamp: event.target.childNodes[0].value });
-	// 		this.setState({ timeStamp: event.target.childNodes[0].innerHTML });
-	// 	} else {
-	// 		// this.setState({ timeStamp: '' });
-	// 		this.setState({ timeStamp: event.target.parentNode.childNodes[0].innerHTML });
-	// 	}
-	// }
-
 	seekAudio = (event) => {
 		let startTime = event.target.parentNode.childNodes[0].innerHTML;
 		let minutes = Number(startTime.slice(0,1));
@@ -41,11 +31,10 @@ class Waveform extends Component {
 	}
 
 	expandNote = (event) => {
-
-	  const toggle = document.querySelector('.list-note');
-	  toggle.classList.toggle('open');
-	  const angleIcon = document.querySelector('.note-expand-icon');
+	  const toggle = event.currentTarget.parentNode.parentNode.parentNode;
+	  const angleIcon = event.currentTarget;
 	  angleIcon.classList.toggle('rotate');
+	  toggle.classList.toggle('open');
 	}
 
 	createList = () => {
@@ -61,14 +50,24 @@ class Waveform extends Component {
 									<div onClick={this.seekAudio} className="note-title">{this.state.db[i].note}</div>
 								</Col>
 								<Col xs="2" sm="2" md="1" lg="1" xl="1" style={{paddingLeft: 0}}>
-									<div onClick={this.expandNote} className="note-expand">
-			  						<FontAwesomeIcon className="note-expand-icon" icon="angle-up" />
-									</div>
+			  					<FontAwesomeIcon onClick={this.expandNote} className="note-expand-icon note-expand" icon="angle-down" />
 								</Col>
 							</Row>
 							<Row>
 								<Col>
-									<div className="note-body">test note body here text talking test note body here text talking  note body here text talking test note body here text talking test note body here text talking test note body here text talking  note body here text talking test note body here text talking test note body here text talking about vocal lyrics test note body here text talking about vocal lyrics test note body here</div>
+									<div className="note-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ex nulla, sagittis ac lacinia ut, semper a lorem. Sed et condimentum velit, quis lobortis erat. Nulla facilisi. Donec nec lorem sed elit porta rhoncus a quis orci. Donec dignissim ex et faucibus aliquam. </div>
+								</Col>
+								<Col xs="2" sm="2" md="1" lg="1" xl="1" style={{paddingLeft: 0}}>
+									<Row>
+										<Col style={{paddingLeft: '.7rem'}}>
+											<FontAwesomeIcon onClick={this.editNote} className="note-edit-icon" icon="edit" />
+										</Col>
+									</Row>
+									<Row>
+										<Col style={{paddingLeft: '.45rem'}}>
+											<FontAwesomeIcon onClick={this.deleteNote} className="trash-icon" icon="trash"/>
+										</Col>
+									</Row>
 								</Col>
 							</Row>
 		  			</li>
@@ -95,7 +94,11 @@ class Waveform extends Component {
 	}
 
 	deleteNote = (event) => {
-		event.target.parentNode.parentNode.parentNode.parentNode.parentNode.remove()
+		event.currentTarget.parentNode.parentNode.parentNode.parentNode.parentNode.remove();
+	}
+	editNote = (event) => {
+		console.log(event.currentTarget);
+		// event.target.parentNode.parentNode.parentNode.parentNode.parentNode.remove();
 	}
 
 	handleNoteInput(event) {

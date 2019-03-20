@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faAngleUp, faPlus} from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faPlus, faTrash, faEdit} from '@fortawesome/free-solid-svg-icons';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Waveform from './components/Waveform/Waveform';
 
-library.add(faAngleUp, faPlus);
+library.add(faAngleDown, faPlus, faTrash, faEdit);
 
 
 
@@ -68,7 +68,6 @@ const inputAudio = (event) => {
 	      	seconds = "00";
 	      }
 	      document.getElementById('current-time').innerHTML = minutes + ":" + seconds;
-
 	    }, 100);
 	  }, e => {
 	    // callback for any errors with decoding audio data

@@ -149,8 +149,9 @@
   cursor: pointer;
   margin-bottom: .2rem;
   overflow: hidden;
-  transition: max-height 600ms;
+  transition: max-height 300ms;
   max-height: 2.2rem;
+  animation: slide-up 0.4s ease;
 }
 
 .note-time {
@@ -161,7 +162,6 @@
 }
 
 .note-title {
-
   white-space: nowrap;
   overflow: hidden;
   display: inline;
@@ -171,8 +171,10 @@
 }
 
 .note-body {
+  font-size: 1rem;
   text-align: left;
-  margin: 0 2rem;
+  margin: .25rem 0 0 .75rem;
+  padding-bottom: .75rem;
 }
 
 .note-expand {
@@ -184,13 +186,21 @@
   color: white;
   background-color: transparent;
   font-size: 1.8rem;
-  transition: transform 500ms;
+  transition: transform 200ms;
 }
 
-.delete-note {
-  display: inline;
-  font-size: 1.65rem;
-  margin-right: .5rem;
+.note-edit-icon {
+  color: rgba(255,255,255,.8);
+  background-color: transparent;
+  font-size: 1.2rem;
+  margin: .75rem 0 .75rem;
+}
+
+
+.trash-icon {
+  color: rgba(255,255,255,.7);
+  background-color: transparent;
+  font-size: 1.3rem;
 }
 
 /* Push */
@@ -274,6 +284,17 @@ input {
   padding-top: .2rem;
 }
 
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 svg {
   background-color: rgba(255,255,255,.9);
 }
@@ -284,7 +305,7 @@ svg {
 
 
 .note-expand-icon.rotate {
-  transform: rotate(-180deg);
+  transform: rotate(180deg);
 }
 
 @media (max-width: 768px) {
