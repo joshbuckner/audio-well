@@ -1,0 +1,8 @@
+.Songlist {
+	font-size: 5rem;
+	color: white;
+	text-align: center;
+	margin: 5rem 15rem;
+	border: solid white 3px;
+	cursor: pointer;
+}

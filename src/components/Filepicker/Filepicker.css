@@ -9,6 +9,10 @@
   height: 3.5rem;
 }
 
+.nav-container {
+  max-width: 500px;
+}
+
 .lbl-file-picker {
   white-space: nowrap;
   overflow: hidden;
@@ -25,4 +29,16 @@
 
 .lbl-file-picker + [type='file']{
   display: none;
+}
+
+.account-name {
+  text-align: left;
+  color: white;
+  padding: .7rem 0;
+}
+
+.sign-out {
+  text-align: right;
+  color: white;
+  padding: .7rem 0;
 }

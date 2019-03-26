@@ -54,6 +54,17 @@
   animation: slide-up 0.4s ease;
 }
 
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .note-time {
   display: inline;
   background-color: rgba(0,0,0,.3);
@@ -102,7 +113,13 @@
   font-size: 1.3rem;
 }
 
-/* Push */
+.hvr-push {
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
 @-webkit-keyframes hvr-push {
   50% {
     -webkit-transform: scale(0.95);
@@ -122,13 +139,6 @@
     -webkit-transform: scale(1);
     transform: scale(1);
   }
-}
-
-.hvr-push {
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 }
 
 .current-time {
@@ -178,17 +188,6 @@ input {
   background-color: transparent;
   font-size: 1.5rem;
   padding-top: .2rem;
-}
-
-@keyframes slide-up {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .list-note.open {
