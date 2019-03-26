@@ -1,7 +1,7 @@
 .Waveform {
   font-family: sans-serif;
   text-align: center;
-  margin: 4rem auto 0;
+  margin: 8rem auto .5rem;
   width: 80%;
 }
 
@@ -23,6 +23,6 @@
   fill: #256EFF;
 }
 
-svg {
+.Waveform svg {
   background-color: rgba(255,255,255,.9);
 }

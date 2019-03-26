@@ -114,32 +114,32 @@ class Notelist extends Component {
 	render() {
     return (
     	<div className="Notelist">
-	    	<Container>
-	          <Row>
-	          	<Col className="notes-container">
-	          		<ul>
-	          			{this.createList()}
-		          			<Row>
-							  			<Col>
-								  			<li className="list-add-note dark-theme">
-								  			<Row>
-								  				<Col style={{textAlign: 'left'}}>
-														<div className="current-time" id="current-time">{this.props.time}</div>
-														<input placeholder="New Note" id="note-input" type="text" onChange={this.handleNoteInput} onKeyPress={this.handleKeyPress.bind(this)}/>
-													</Col>
-													<Col xs="2" sm="2" md="1" lg="1" xl="1" style={{paddingLeft: 0}}>
-														<div onClick={this.createNote} className="add-note">
-								  						<FontAwesomeIcon className="note-add-icon" icon="plus" />
-														</div>
-													</Col>
-												</Row>
-								  			</li>
-							  			</Col>
-							  		</Row>
-	          		</ul>
-	          	</Col>
-	          </Row>
-          </Container>
+    		<Container>
+          <Row>
+          	<Col className="notes-container">
+          		<ul>
+          			{this.createList()}
+          			<Row>
+					  			<Col>
+						  			<li className="list-add-note dark-theme">
+						  			<Row>
+						  				<Col style={{textAlign: 'left'}}>
+												<div className="current-time" id="current-time">{this.props.time}</div>
+												<input placeholder="New Note" id="note-input" type="text" onChange={this.handleNoteInput} onKeyPress={this.handleKeyPress.bind(this)}/>
+											</Col>
+											<Col xs="2" sm="2" md="1" lg="1" xl="1" style={{paddingLeft: 0}}>
+												<div onClick={this.createNote} className="add-note">
+						  						<FontAwesomeIcon className="note-add-icon" icon="plus" />
+												</div>
+											</Col>
+										</Row>
+						  			</li>
+					  			</Col>
+					  		</Row>
+          		</ul>
+          	</Col>
+          </Row>
+        </Container>
       </div>
     );
   }

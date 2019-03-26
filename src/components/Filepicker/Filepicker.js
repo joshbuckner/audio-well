@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import './Filepicker.css';
 
 
@@ -84,26 +82,11 @@ class Filerpicker extends Component {
 	}
 
 	render() {
-		const { onRouteChange } = this.props;
     return (
-    	<div className="fixed-controls-top">
-      	<Row>
-      		<Col>
-	      		<div className="account-name">
-		        	<div onClick={() => onRouteChange('userPortal')}>Account Portal</div>
-		        </div>
-      		</Col>
-      		<Col>
-        		{/* our audio element */}
-        		<label htmlFor="input" id="lbl-file-picker" className="lbl-file-picker hvr-push">Import Audio</label>
-        		<input onChange={this.inputAudio} type="file" id="input" className="file-picker"/>
-          </Col>
-          <Col>
-          	<div className="sign-out">
-		        	<div onClick={() => onRouteChange('signIn')}>Sign Out</div>
-		        </div>
-          </Col>
-      	</Row>
+    	<div className="file-picker">
+    		{/* our audio element */}
+    		<label htmlFor="input" id="lbl-file-picker" className="lbl-file-picker hvr-push">Import Audio</label>
+    		<input onChange={this.inputAudio} type="file" id="input" className="file-picker"/>
       </div>
     );
   }

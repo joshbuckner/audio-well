@@ -3,8 +3,8 @@ import './Audioplayer.css';
 
 
 class Audioplayer extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {};
 	}
 

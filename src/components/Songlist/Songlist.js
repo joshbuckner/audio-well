@@ -1,16 +1,64 @@
 import React, { Component } from 'react';
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Uploader from '../Uploader/Uploader';
 import './Songlist.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Songlist extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {}
+		this.state = {
+			db: [
+				'song 1', 'song 2', 'song 3'
+			],
+		}
+	}
+
+	createList = () => {
+		const { onRouteChange } = this.props;
+		let list = [];
+		for (let i = 0; i < this.state.db.length; i++) {
+  		list.push(
+  			<Row key={i}>
+	  			<Col>
+		  			<li className="list-song">
+		  				<Row>
+		  					<Col onClick={() => onRouteChange('songView')}>
+			  					{this.state.db[i]}
+			  				</Col>
+			  				<Col xs="2" sm="2" md="1" lg="1" xl="1">
+			  					<FontAwesomeIcon className="song-options-icon" icon="ellipsis-h" />
+			  				</Col>
+			  			</Row>
+		  			</li>
+	  			</Col>
+	  		</Row>
+  		);
+		}
+		return list;
+	}
+
+	createSong = (name) => {
+		this.setState({db: this.state.db.concat(name)});
 	}
 
 	render() {
-		const { onRouteChange } = this.props;
     return (
-    	<div className="Songlist" onClick={() => onRouteChange('songView')}>Songlist</div>
+    	<div className="Songlist">
+    		<Container>
+    			<Row>
+          	<Col className="songs-container">
+          		<ul>
+          			{this.createList()}
+          		</ul>
+          		<Uploader createSong={this.createSong} loadSong={this.props.loadSong}/>
+          	</Col>
+          </Row>
+    		</Container>
+    	</div>
     );
   }
 }

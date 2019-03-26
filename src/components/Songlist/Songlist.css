@@ -1,8 +1,44 @@
 .Songlist {
-	font-size: 5rem;
-	color: white;
-	text-align: center;
-	margin: 5rem 15rem;
-	border: solid white 3px;
-	cursor: pointer;
+	font-family: sans-serif;
+  margin: 8rem auto .5rem;
+  width: 80%;
+  font-family: 'Open Sans', sans-serif;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+}
+
+.songs-container {
+	padding: 0 20%;
+}
+
+.songs-container ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.list-song {
+	background-color: rgba(45,45,45,.9);
+  font-size: 1.2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: .5rem;
+  padding: .3rem .5rem .3rem .9rem;
+  color: white;
+  cursor: pointer;
+  margin-bottom: .2rem;
+  overflow: hidden;
+  animation: slide-up 0.4s ease;
+  text-align: left;
+}
+
+.song-options-icon {
+  color: white;
+  background-color: transparent;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .songs-container {
+    padding: 0;
+  }
 }

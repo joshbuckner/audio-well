@@ -1,24 +1,16 @@
-.fixed-controls-top {
+.file-picker {
   text-align: center;
+  margin-top: 4rem;
   padding: .25rem 2rem .5rem;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #2D2D2D;
-  z-index: 1;
   height: 3.5rem;
-}
-
-.nav-container {
-  max-width: 500px;
 }
 
 .lbl-file-picker {
   white-space: nowrap;
   overflow: hidden;
-  max-width: 18rem;
+  max-width: 16rem;
   padding: .25rem .5rem;
-  background-color: #256EFF;
+  background-color: #2d2d2d;
   display: inline-block;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   cursor:pointer;
@@ -29,16 +21,4 @@
 
 .lbl-file-picker + [type='file']{
   display: none;
-}
-
-.account-name {
-  text-align: left;
-  color: white;
-  padding: .7rem 0;
-}
-
-.sign-out {
-  text-align: right;
-  color: white;
-  padding: .7rem 0;
 }
