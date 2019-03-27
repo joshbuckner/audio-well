@@ -13,7 +13,7 @@ class Uploader extends Component {
 	render() {
 		const { loadSong } = this.props;
     return (
-    	<div>
+    	<div className="file-pond">
     		<FilePond 
     			ref={ref => this.pond = ref}
     			allowMultiple={false} 

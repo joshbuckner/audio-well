@@ -1,6 +1,6 @@
 .Songlist {
 	font-family: sans-serif;
-  margin: 8rem auto .5rem;
+  margin: 1rem auto .5rem;
   width: 80%;
   font-family: 'Open Sans', sans-serif;
   cursor: pointer;
@@ -14,11 +14,12 @@
 
 .songs-container ul {
   padding: 0;
+  margin: 0;
   list-style-type: none;
 }
 
 .list-song {
-	background-color: rgba(45,45,45,.9);
+	background-color: rgba(45,45,45,1);
   font-size: 1.2rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: .5rem;

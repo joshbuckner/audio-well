@@ -47,6 +47,7 @@ class App extends Component {
 	      { route === 'userPortal' ?
 	      	<div> 
             <Navigation onRouteChange={this.onRouteChange}/>
+            <h1 style={{ marginTop: '4.5rem', textAlign: 'center', color: 'white' }}>Account Portal</h1>
 	          <Songlist onRouteChange={this.onRouteChange} loadSong={this.loadSong}/>
           </div>
           : 
@@ -54,7 +55,8 @@ class App extends Component {
           	<div>
               <Navigation onRouteChange={this.onRouteChange}/>
 		          {/*<Filepicker />*/}
-			        <Waveform />
+			        {/*<Waveform />*/}
+              <h1 style={{ marginTop: '4.5rem', textAlign: 'center', color: 'white' }}>Song Name</h1>
 			        <Notelist time={this.state.time}/>
 			        <Audioplayer song={this.state.song}/>
 	          </div>

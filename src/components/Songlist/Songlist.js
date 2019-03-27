@@ -12,7 +12,7 @@ class Songlist extends Component {
 		super(props);
 		this.state = {
 			db: [
-				'song 1', 'song 2', 'song 3'
+				'Song 1', 'Song 2', 'Song 3'
 			],
 		}
 	}
