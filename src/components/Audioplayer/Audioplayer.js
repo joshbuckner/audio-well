@@ -9,6 +9,9 @@ class Audioplayer extends Component {
 	}
 
   componentDidMount() {
+    document.getElementById('audio-source').src = `http://10.0.0.229:3000/public/files/${this.props.song}`;
+    document.getElementById('audio-element').load();
+    console.log(document.getElementById('audio-source').src);
     this.audioTimer = setInterval(() => {
       let audioElement = document.getElementById('audio-element');
       let timeDisplay = Math.round(audioElement.currentTime - .6);
@@ -21,7 +24,7 @@ class Audioplayer extends Component {
         minutes = "0";
         seconds = "00";
       }
-      this.setState({time: minutes + ":" + seconds});
+      this.props.updateTime(minutes + ":" + seconds);
     }, 100);
   }
 

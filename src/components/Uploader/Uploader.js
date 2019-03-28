@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FilePond, registerPlugin } from 'react-filepond';
+import { FilePond } from 'react-filepond';
 import 'filepond/dist/filepond.min.css';
 import './Uploader.css';
 
@@ -13,18 +13,24 @@ class Uploader extends Component {
 	}
 
   addSong = () => {
-    fetch('http://10.0.0.229:3000/addsong', {
+    if (this.state.files[0]) {
+      fetch('http://10.0.0.229:3000/addsong', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
-        name: this.state.files[0].name
+        name: this.state.files[0].name,
+        user: this.props.user.email
       })
+    })
+    .then(response => response.json())
+    .then(user => {
+      if (user.id) {
+        this.props.loadUser(user);
+      }
     });
-    // .then(response => response.json())
-    // .then(user => {
-    //   if (user.id) {
-    //     this.props.loadUser(user)
+    // this.props.createSong(`${this.state.files[0].name}`);
     this.setState({ files: "" });
+    }
     //   }
     // })
   }

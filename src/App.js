@@ -54,7 +54,14 @@ class App extends Component {
       joined: data.joined, 
       songs: data.songs 
     }});
-    console.log('loadUser executed');
+  }
+
+  loadNotes = (data) => {
+    this.setState({})
+  }
+
+  updateTime = (time) => {
+    this.setState({ time: time });
   }
 
   render() {
@@ -65,7 +72,7 @@ class App extends Component {
 	      	<div> 
             <Navigation onRouteChange={this.onRouteChange}/>
             <h1 style={{ marginTop: '4.5rem', textAlign: 'center', color: 'white' }}>Account Portal</h1>
-	          <Songlist onRouteChange={this.onRouteChange} loadSong={this.loadSong} user={this.state.user}/>
+	          <Songlist onRouteChange={this.onRouteChange} loadSong={this.loadSong} song={this.state.song} user={this.state.user} loadUser={this.loadUser}/>
           </div>
           : 
           ( route === 'songView' ?
@@ -73,10 +80,10 @@ class App extends Component {
               <Navigation onRouteChange={this.onRouteChange}/>
 		          {/*<Filepicker />*/}
 			        {/*<Waveform />*/}
-              <h1 style={{ marginTop: '4.5rem', textAlign: 'center', color: 'white' }}>Song Name
-              </h1>
-			        <Notelist time={this.state.time}/>
-			        <Audioplayer song={this.state.song}/>
+              <h3 style={{ marginTop: '4.5rem', textAlign: 'center', color: 'white' }}>{this.state.song}
+              </h3>
+			        <Notelist song={this.state.song} user={this.state.user} loadUser={this.loadUser} time={this.state.time}/>
+			        <Audioplayer updateTime={this.updateTime} song={this.state.song}/>
 	          </div>
           	:
           	( route === 'signIn' ? 

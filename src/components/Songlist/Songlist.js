@@ -14,20 +14,25 @@ class Songlist extends Component {
 			db: [
 				'Song 1', 'Song 2', 'Song 3'
 			],
+			currentSong: ""
 		}
 	}
 
+	handleSongClick = (event) => {
+		this.props.loadSong(event.target.innerText);
+		this.props.onRouteChange('songView');
+	}
+
 	createList = () => {
-		const { onRouteChange } = this.props;
 		let list = [];
-		for (let i = 0; i < this.state.db.length; i++) {
+		for (let i = 0; i < this.props.user.songs.length; i++) {
   		list.push(
   			<Row key={i}>
 	  			<Col>
 		  			<li className="list-song">
 		  				<Row>
-		  					<Col onClick={() => onRouteChange('songView')}>
-			  					{this.state.db[i]}
+		  					<Col onClick={this.handleSongClick}>
+			  					{this.props.user.songs[i].name}
 			  				</Col>
 			  				<Col xs="2" sm="2" md="1" lg="1" xl="1">
 			  					<FontAwesomeIcon className="song-options-icon" icon="ellipsis-h" />
@@ -41,9 +46,9 @@ class Songlist extends Component {
 		return list;
 	}
 
-	createSong = (name) => {
-		this.setState({db: this.state.db.concat(name)});
-	}
+	// createSong = (name) => {
+	// 	this.setState({db: this.props.user.songs.concat(name)});
+	// }
 
 	render() {
     return (
@@ -54,7 +59,7 @@ class Songlist extends Component {
           		<ul>
           			{this.createList()}
           		</ul>
-          		<Uploader createSong={this.createSong} loadSong={this.props.loadSong} user={this.props.user} onRouteChange={this.props.onRouteChange}/>
+          		<Uploader createSong={this.createSong} loadSong={this.props.loadSong} user={this.props.user} loadUser={this.props.loadUser} onRouteChange={this.props.onRouteChange}/>
           	</Col>
           </Row>
     		</Container>
