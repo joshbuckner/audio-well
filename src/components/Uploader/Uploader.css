@@ -8,8 +8,8 @@
   border-radius: .5rem;
 }
 
-.file-pond {
-  animation: slide-up 0.4s ease;
+.filepond--root {
+  margin-bottom: .25rem;
 }
 
 /* bordered drop area */

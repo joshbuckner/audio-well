@@ -4,8 +4,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faAngleDown, faPlus, faTrash, faEdit, faEllipsisH, faUpload } from '@fortawesome/free-solid-svg-icons';
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
-import Filepicker from './components/Filepicker/Filepicker';
-import Waveform from './components/Waveform/Waveform';
+// import Filepicker from './components/Filepicker/Filepicker';
+// import Waveform from './components/Waveform/Waveform';
 import Notelist from './components/Notelist/Notelist';
 import Audioplayer from './components/Audioplayer/Audioplayer';
 import Songlist from './components/Songlist/Songlist';
@@ -17,7 +17,14 @@ const initialState = {
 	time: '0:00',
 	route: 'signIn',
 	isSignedIn: false,
-  song: ""
+  song: "",
+  user: {
+    id: '',
+    name: '',
+    email: '',
+    joined: '',
+    songs: []
+  }
 }
 
 class App extends Component {
@@ -32,12 +39,22 @@ class App extends Component {
     } else if (route === 'userPortal') {
       this.setState({isSignedIn: true});
     }
-    this.setState({route: route});
+    this.setState({ route: route });
   }
 
   loadSong = (song) => {
     this.setState({ song: song });
-    console.log(this.state);
+  }
+
+  loadUser = (data) => {
+    this.setState({ user: { 
+      id: data.id, 
+      name: data.name, 
+      email: data.email, 
+      joined: data.joined, 
+      songs: data.songs 
+    }});
+    console.log('loadUser executed');
   }
 
   render() {
@@ -48,7 +65,7 @@ class App extends Component {
 	      	<div> 
             <Navigation onRouteChange={this.onRouteChange}/>
             <h1 style={{ marginTop: '4.5rem', textAlign: 'center', color: 'white' }}>Account Portal</h1>
-	          <Songlist onRouteChange={this.onRouteChange} loadSong={this.loadSong}/>
+	          <Songlist onRouteChange={this.onRouteChange} loadSong={this.loadSong} user={this.state.user}/>
           </div>
           : 
           ( route === 'songView' ?
@@ -56,15 +73,16 @@ class App extends Component {
               <Navigation onRouteChange={this.onRouteChange}/>
 		          {/*<Filepicker />*/}
 			        {/*<Waveform />*/}
-              <h1 style={{ marginTop: '4.5rem', textAlign: 'center', color: 'white' }}>Song Name</h1>
+              <h1 style={{ marginTop: '4.5rem', textAlign: 'center', color: 'white' }}>Song Name
+              </h1>
 			        <Notelist time={this.state.time}/>
 			        <Audioplayer song={this.state.song}/>
 	          </div>
           	:
           	( route === 'signIn' ? 
-            <Signin onRouteChange={this.onRouteChange}/> 
+            <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/> 
             : 
-            <Register onRouteChange={this.onRouteChange}/> 
+            <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/> 
           	)
           )
         }

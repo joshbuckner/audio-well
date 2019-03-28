@@ -1,29 +1,43 @@
 import React, { Component } from 'react';
-import { FilePond } from 'react-filepond';
+import { FilePond, registerPlugin } from 'react-filepond';
 import 'filepond/dist/filepond.min.css';
 import './Uploader.css';
-
 
 class Uploader extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {}
+		this.state = {
+      files: [
+      ]
+    }
 	}
 
+  addSong = () => {
+    fetch('http://10.0.0.229:3000/addsong', {
+      method: 'post',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        name: this.state.files[0].name
+      })
+    });
+    // .then(response => response.json())
+    // .then(user => {
+    //   if (user.id) {
+    //     this.props.loadUser(user)
+    this.setState({ files: "" });
+    //   }
+    // })
+  }
+
+  handleInit() {
+    console.log("FilePond instance has initialised", this.pond);
+  }
+
 	render() {
-		const { loadSong } = this.props;
     return (
-    	<div className="file-pond">
-    		<FilePond 
-    			ref={ref => this.pond = ref}
-    			allowMultiple={false} 
-    			maxFiles={1} 
-    			server='/' 
-    			onupdatefiles={(file) => {
-            // Set current file objects to this.state
-            loadSong(file);
-          }}/>
-	    	{/*<button onClick={() => createSong(this.state.song.name)} className="upload-btn">Upload</button>*/}
+    	<div>
+    		<FilePond oninit={() => this.handleInit()} files={this.state.files} allowMultiple={false} name={'file'} server='http://10.0.0.229:3000/upload' ref={ref => this.pond = ref} onupdatefiles={(fileItems) => {this.setState({ files: fileItems.map(fileItem => fileItem.file) });}}/>
+	    	<button onClick={this.addSong} className="upload-btn">Upload</button>
     	</div>
     );
   }

@@ -54,7 +54,7 @@ class Songlist extends Component {
           		<ul>
           			{this.createList()}
           		</ul>
-          		<Uploader createSong={this.createSong} loadSong={this.props.loadSong}/>
+          		<Uploader createSong={this.createSong} loadSong={this.props.loadSong} user={this.props.user} onRouteChange={this.props.onRouteChange}/>
           	</Col>
           </Row>
     		</Container>
