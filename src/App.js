@@ -5,7 +5,7 @@ import { faAngleDown, faPlus, faTrash, faEdit, faEllipsisH, faUpload } from '@fo
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
 // import Filepicker from './components/Filepicker/Filepicker';
-// import Waveform from './components/Waveform/Waveform';
+import Waveform from './components/Waveform/Waveform';
 import Notelist from './components/Notelist/Notelist';
 import Audioplayer from './components/Audioplayer/Audioplayer';
 import Songlist from './components/Songlist/Songlist';
@@ -71,7 +71,7 @@ class App extends Component {
 	      { route === 'userPortal' ?
 	      	<div> 
             <Navigation onRouteChange={this.onRouteChange}/>
-            <h1 style={{ marginTop: '4.5rem', textAlign: 'center', color: 'white' }}>Account Portal</h1>
+            <h1 style={{ marginTop: '4.5rem', textAlign: 'center', color: 'white' }}>{this.state.user.name}'s Songs</h1>
 	          <Songlist onRouteChange={this.onRouteChange} loadSong={this.loadSong} song={this.state.song} user={this.state.user} loadUser={this.loadUser}/>
           </div>
           : 
@@ -79,9 +79,10 @@ class App extends Component {
           	<div>
               <Navigation onRouteChange={this.onRouteChange}/>
 		          {/*<Filepicker />*/}
-			        {/*<Waveform />*/}
+			        
               <h3 style={{ marginTop: '4.5rem', textAlign: 'center', color: 'white' }}>{this.state.song}
               </h3>
+              <Waveform />
 			        <Notelist song={this.state.song} user={this.state.user} loadUser={this.loadUser} time={this.state.time}/>
 			        <Audioplayer updateTime={this.updateTime} song={this.state.song}/>
 	          </div>
