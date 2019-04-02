@@ -9,14 +9,21 @@
   height: 3.5rem;
 }
 
-.account-portal {
+.brand-logo {
   text-align: left;
   color: white;
-  padding: .7rem 0;
+  font-size: 1.5rem;
+  padding: .25rem 0;
+}
+
+.headphones-icon {
+  color: black;
+  font-size: 1rem;
 }
 
 .sign-out {
   text-align: right;
   color: white;
-  padding: .7rem 0;
+  font-size: 1.25rem;
+  padding: .5rem 0;
 }

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faAngleDown, faPlus, faTrash, faEdit, faEllipsisH, faUpload } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faPlus, faTrash, faEdit, faEllipsisH, faUpload, faHeadphones } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
 // import Filepicker from './components/Filepicker/Filepicker';
@@ -11,7 +12,7 @@ import Audioplayer from './components/Audioplayer/Audioplayer';
 import Songlist from './components/Songlist/Songlist';
 import Navigation from './components/Navigation/Navigation';
 
-library.add(faAngleDown, faPlus, faTrash, faEdit, faEllipsisH, faUpload);
+library.add(faAngleDown, faPlus, faTrash, faEdit, faEllipsisH, faUpload, faHeadphones);
 
 const initialState = {
 	time: '0:00',
@@ -88,9 +89,15 @@ class App extends Component {
 	          </div>
           	:
           	( route === 'signIn' ? 
-            <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/> 
-            : 
-            <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/> 
+            <div>
+              <h1 style={{ marginTop: '4.5rem', textAlign: 'center', color: 'white', fontSize: '3.2rem' }}>Audi<FontAwesomeIcon style={{ fontSize: '2.5rem', color: 'black' }} icon="headphones" />well</h1>
+              <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+            </div>
+            :
+            <div>
+              <h1 style={{ marginTop: '4.5rem', textAlign: 'center', color: 'white', fontSize: '3.2rem' }}>Audi<FontAwesomeIcon style={{ fontSize: '2.5rem', color: 'black' }} icon="headphones" />well</h1>
+              <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+            </div>
           	)
           )
         }

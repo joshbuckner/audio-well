@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './Navigation.css';
@@ -15,11 +16,9 @@ class Navigation extends Component {
     return (
     	<div className="fixed-controls-top">
       	<Row>
-      		<Col>
-	      		<div className="account-portal">
-		        	<div onClick={() => onRouteChange('userPortal')}>Account Portal</div>
-		        </div>
-      		</Col>
+          <Col>
+            <div className="brand-logo" onClick={() => onRouteChange('userPortal')}>Audi<FontAwesomeIcon className="headphones-icon" icon="headphones" />well</div>
+          </Col>
           <Col>
           	<div className="sign-out">
 		        	<div onClick={() => onRouteChange('signIn')}>Sign Out</div>
