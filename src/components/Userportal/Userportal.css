@@ -1,7 +1,7 @@
 .Userportal {
 	font-family: sans-serif;
   margin: 1rem auto .5rem;
-  width: 80%;
+  width: 95%;
   font-family: 'Open Sans', sans-serif;
   cursor: pointer;
   color: white;
@@ -9,7 +9,7 @@
 }
 
 .songs-container {
-	padding: 0 20%;
+	padding: 0;
 }
 
 .songs-container ul {

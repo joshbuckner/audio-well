@@ -1,0 +1,17 @@
+.Footer {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+  width: 80%;
+  max-width: 350px;
+  text-align: center;
+  color: white;
+  padding: 0 auto;
+  margin-bottom: 1rem;
+}
+
+.footer-link {
+	display: inline;
+	margin: 0 1rem;
+}

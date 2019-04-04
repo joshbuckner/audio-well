@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faAngleDown, faPlus, faTrash, faEdit, faEllipsisH, faUpload, faHeadphones } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faPlus, faTrash, faEdit, faEllipsisH, faUpload, faHeadphones, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faFacebookF, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
@@ -11,8 +12,9 @@ import Notelist from './components/Notelist/Notelist';
 import Audioplayer from './components/Audioplayer/Audioplayer';
 import Userportal from './components/Userportal/Userportal';
 import Navigation from './components/Navigation/Navigation';
+import Footer from './components/Footer/Footer';
 
-library.add(faAngleDown, faPlus, faTrash, faEdit, faEllipsisH, faUpload, faHeadphones);
+library.add(faAngleDown, faPlus, faTrash, faEdit, faEllipsisH, faUpload, faHeadphones, faFacebookF, faTwitter, faInstagram, faEnvelope);
 
 const initialState = {
 	time: '0:00',
@@ -90,13 +92,15 @@ class App extends Component {
           	:
           	( route === 'signIn' ? 
             <div>
-              <h1 style={{ marginTop: '4.5rem', textAlign: 'center', color: 'white', fontSize: '3.2rem' }}>Audio<FontAwesomeIcon style={{ fontSize: '2.5rem', color: 'black' }} icon="headphones" />well</h1>
+              <h1 style={{ marginTop: '4.5rem', marginBottom: '4.5rem', textAlign: 'center', color: 'white', fontSize: '3.2rem' }}>Audio<FontAwesomeIcon style={{ fontSize: '2.5rem', color: 'black' }} icon="headphones" />well</h1>
               <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+              <Footer/>
             </div>
             :
             <div>
-              <h1 style={{ marginTop: '4.5rem', textAlign: 'center', color: 'white', fontSize: '3.2rem' }}>Audio<FontAwesomeIcon style={{ fontSize: '2.5rem', color: 'black' }} icon="headphones" />well</h1>
+              <h1 style={{ marginTop: '4.5rem', marginBottom: '4.5rem', textAlign: 'center', color: 'white', fontSize: '3.2rem' }}>Audio<FontAwesomeIcon style={{ fontSize: '2.5rem', color: 'black' }} icon="headphones" />well</h1>
               <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+              <Footer/>
             </div>
           	)
           )

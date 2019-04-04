@@ -43,7 +43,14 @@ class Userportal extends Component {
 	  		</Row>
   		);
 		}
-		return list;
+		if (list.length !== 0) {
+			return list;
+		}
+		return <Row>
+		  			<Col style={{ textAlign: 'center' }}>
+			  			Add a new song
+		  			</Col>
+		  		</Row>
 	}
 
 	// createSong = (name) => {
@@ -54,23 +61,25 @@ class Userportal extends Component {
     return (
     	<div className="Userportal">
     		<Container>
-    			<Row>
-          	<Col className="songs-container">
+    			<Row className="songs-container">
+        		<Col lg>
           		<div className="list-container">
 	          		<h6>Owner</h6>
 	          		<ul>
 	          			{this.createList()}
 	          		</ul>
           		</div>
+          	</Col>
+          	<Col lg>
           		<div className="list-container">
 	          		<h6>Member</h6>
 	          		<ul>
 	          			{this.createList()}
 	          		</ul>
 	          	</div>
-          		<Uploader createSong={this.createSong} loadSong={this.props.loadSong} user={this.props.user} loadUser={this.props.loadUser} onRouteChange={this.props.onRouteChange}/>
-          	</Col>
+	          </Col>
           </Row>
+          <Uploader createSong={this.createSong} loadSong={this.props.loadSong} user={this.props.user} loadUser={this.props.loadUser} onRouteChange={this.props.onRouteChange}/>
     		</Container>
     	</div>
     );
