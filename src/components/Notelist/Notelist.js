@@ -113,7 +113,7 @@ class Notelist extends Component {
 			this.setState({counter: 0});
 		}
 
-	  fetch('http://10.0.0.229:3000/addnote', {
+	  fetch('http://192.168.0.27:3000/addnote', {
 	    method: 'post',
 	    headers: {'Content-Type': 'application/json'},
 	    body: JSON.stringify({

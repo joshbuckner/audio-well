@@ -17,7 +17,7 @@ class Navigation extends Component {
     	<div className="fixed-controls-top">
       	<Row>
           <Col>
-            <div className="brand-logo" onClick={() => onRouteChange('userPortal')}>Audi<FontAwesomeIcon className="headphones-icon" icon="headphones" />well</div>
+            <div className="brand-logo" onClick={() => onRouteChange('userPortal')}>Audio<FontAwesomeIcon className="headphones-icon" icon="headphones" />well</div>
           </Col>
           <Col>
           	<div className="sign-out">

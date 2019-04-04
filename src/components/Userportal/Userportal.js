@@ -4,10 +4,10 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Uploader from '../Uploader/Uploader';
-import './Songlist.css';
+import './Userportal.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-class Songlist extends Component {
+class Userportal extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -52,13 +52,22 @@ class Songlist extends Component {
 
 	render() {
     return (
-    	<div className="Songlist">
+    	<div className="Userportal">
     		<Container>
     			<Row>
           	<Col className="songs-container">
-          		<ul>
-          			{this.createList()}
-          		</ul>
+          		<div className="list-container">
+	          		<h6>Owner</h6>
+	          		<ul>
+	          			{this.createList()}
+	          		</ul>
+          		</div>
+          		<div className="list-container">
+	          		<h6>Member</h6>
+	          		<ul>
+	          			{this.createList()}
+	          		</ul>
+	          	</div>
           		<Uploader createSong={this.createSong} loadSong={this.props.loadSong} user={this.props.user} loadUser={this.props.loadUser} onRouteChange={this.props.onRouteChange}/>
           	</Col>
           </Row>
@@ -68,4 +77,4 @@ class Songlist extends Component {
   }
 }
 
-export default Songlist;
+export default Userportal;

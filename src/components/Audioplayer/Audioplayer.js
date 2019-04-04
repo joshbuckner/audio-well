@@ -14,7 +14,7 @@ class Audioplayer extends Component {
     const NUMBER_OF_BUCKETS = 300; // number of "bars" the waveform should have
     const SPACE_BETWEEN_BARS = 0.2; // from 0 (no gaps between bars) to 1 (only gaps - bars won't be visible)
 
-    document.getElementById('audio-source').src = `http://10.0.0.229:3000/public/files/${this.props.song}`;
+    document.getElementById('audio-source').src = `http://192.168.0.27:3000/public/files/${this.props.song}`;
     document.getElementById('audio-element').load();
 
     axios({url: document.getElementById('audio-source').src, responseType: "arraybuffer"}).then(response => {

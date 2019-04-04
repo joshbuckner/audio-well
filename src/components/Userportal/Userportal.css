@@ -1,4 +1,4 @@
-.Songlist {
+.Userportal {
 	font-family: sans-serif;
   margin: 1rem auto .5rem;
   width: 80%;
@@ -18,10 +18,21 @@
   list-style-type: none;
 }
 
-.list-song {
-	background-color: rgba(45,45,45,1);
+.list-container {
+  background-color: rgba(45,45,45,1);
   font-size: 1.2rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: .5rem;
+  padding: .3rem .5rem .3rem .5rem;
+  margin-bottom: .5rem;
+  animation: slide-up 0.4s ease;
+  text-align: left;
+}
+
+.list-song {
+	background-color: rgba(255,255,255,.2);
+  font-size: 1.2rem;
+  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
   border-radius: .5rem;
   padding: .3rem .5rem .3rem .9rem;
   color: white;
