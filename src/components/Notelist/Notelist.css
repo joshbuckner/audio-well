@@ -149,7 +149,7 @@
   cursor: default;
 }
 
-input {
+#note-input {
   background-color:transparent;
   text-align: left;
   color: white;

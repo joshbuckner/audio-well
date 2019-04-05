@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FilePond } from 'react-filepond';
 import 'filepond/dist/filepond.min.css';
+import Form from 'react-bootstrap/Form';
 import './Uploader.css';
 
 class Uploader extends Component {
@@ -8,7 +9,9 @@ class Uploader extends Component {
 		super(props);
 		this.state = {
       files: [
-      ]
+      ],
+      songName: "",
+      members: []
     }
 	}
 
@@ -28,22 +31,41 @@ class Uploader extends Component {
         this.props.loadUser(user);
       }
     });
-    // this.props.createSong(`${this.state.files[0].name}`);
     this.setState({ files: "" });
+    this.props.onRouteChange('userPortal');
     }
-    //   }
-    // })
   }
 
   handleInit() {
     console.log("FilePond instance has initialised", this.pond);
   }
 
+  onEmailsChange = (event) => {
+    this.setState({members: event.target.value.split(', ')});
+  }
+
+  onNameChange = (event) => {
+    this.setState({songName: event.target.value});
+  }
+
 	render() {
     return (
     	<div>
     		<FilePond oninit={() => this.handleInit()} files={this.state.files} allowMultiple={false} name={'file'} server='http://192.168.0.27:3000/upload' ref={ref => this.pond = ref} onupdatefiles={(fileItems) => {this.setState({ files: fileItems.map(fileItem => fileItem.file) });}}/>
-	    	<button onClick={this.addSong} className="upload-btn">Upload</button>
+	    	<div className="list-container">
+          <Form>
+            <Form.Group controlId="formGroupName">
+              <Form.Label>Song Name</Form.Label>
+              <Form.Control onChange={this.onNameChange} type="text" placeholder="Enter song name" />
+            </Form.Group>
+            <Form.Group controlId="formGroupPassword">
+              <Form.Label>Members</Form.Label>
+              <Form.Control onChange={this.onEmailsChange} type="email" placeholder="Enter member email addresses" allowmultiple="true"/>
+            </Form.Group>
+            <button onClick={this.addSong} className="upload-btn">Add Song</button>
+          </Form>
+        </div>
+        
     	</div>
     );
   }

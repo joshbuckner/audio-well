@@ -32,7 +32,7 @@
 .list-song {
 	background-color: rgba(255,255,255,.2);
   font-size: 1.2rem;
-  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: .5rem;
   padding: .3rem .5rem .3rem .9rem;
   color: white;
@@ -47,6 +47,25 @@
   color: white;
   background-color: transparent;
   font-size: 1rem;
+}
+
+.add-song {
+  display: block;
+  width: 4rem;
+  margin: .25rem auto;
+  text-align: center;
+  padding:  .25rem;
+  background-color: #256EFF;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor:pointer;
+  color:white;
+  border-radius: .5rem;
+}
+
+.add-song-icon {
+  color: white;
+  background-color: transparent;
+  font-size: 1.2rem;
 }
 
 @media (max-width: 768px) {

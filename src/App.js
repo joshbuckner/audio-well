@@ -12,6 +12,7 @@ import Notelist from './components/Notelist/Notelist';
 import Audioplayer from './components/Audioplayer/Audioplayer';
 import Userportal from './components/Userportal/Userportal';
 import Navigation from './components/Navigation/Navigation';
+import Importsong from './components/Importsong/Importsong';
 import Footer from './components/Footer/Footer';
 
 library.add(faAngleDown, faPlus, faTrash, faEdit, faEllipsisH, faUpload, faHeadphones, faFacebookF, faTwitter, faInstagram, faEnvelope);
@@ -90,18 +91,26 @@ class App extends Component {
 			        <Audioplayer updateTime={this.updateTime} song={this.state.song}/>
 	          </div>
           	:
-          	( route === 'signIn' ? 
-            <div>
-              <h1 style={{ marginTop: '4.5rem', marginBottom: '4.5rem', textAlign: 'center', color: 'white', fontSize: '3.2rem' }}>Audio<FontAwesomeIcon style={{ fontSize: '2.5rem', color: 'black' }} icon="headphones" />well</h1>
-              <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
-              <Footer/>
-            </div>
-            :
-            <div>
-              <h1 style={{ marginTop: '4.5rem', marginBottom: '4.5rem', textAlign: 'center', color: 'white', fontSize: '3.2rem' }}>Audio<FontAwesomeIcon style={{ fontSize: '2.5rem', color: 'black' }} icon="headphones" />well</h1>
-              <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
-              <Footer/>
-            </div>
+            ( route === 'addSongView' ? 
+              <div>
+                <Navigation onRouteChange={this.onRouteChange}/>
+                <h1 style={{ marginTop: '4.5rem', textAlign: 'center', color: 'white' }}>Add Song</h1>
+                <Importsong onRouteChange={this.onRouteChange} user={this.state.user} loadUser={this.loadUser}/>
+              </div>
+              :
+            	( route === 'signIn' ? 
+                <div>
+                  <h1 style={{ marginTop: '4.5rem', marginBottom: '4.5rem', textAlign: 'center', color: 'white', fontSize: '3.2rem' }}>Audio<FontAwesomeIcon style={{ fontSize: '2.5rem', color: 'black' }} icon="headphones" />well</h1>
+                  <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+                  <Footer/>
+                </div>
+              :
+                <div>
+                  <h1 style={{ marginTop: '4.5rem', marginBottom: '4.5rem', textAlign: 'center', color: 'white', fontSize: '3.2rem' }}>Audio<FontAwesomeIcon style={{ fontSize: '2.5rem', color: 'black' }} icon="headphones" />well</h1>
+                  <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+                  <Footer/>
+                </div>
+              )
           	)
           )
         }

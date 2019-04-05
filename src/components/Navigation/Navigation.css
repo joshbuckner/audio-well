@@ -10,7 +10,8 @@
 }
 
 .brand-logo {
-  text-align: left;
+  position: absolute;
+  left: 0;
   color: white;
   font-size: 1.5rem;
   padding: .25rem 0;
@@ -18,11 +19,12 @@
 
 .headphones-icon {
   color: black;
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
 .sign-out {
-  text-align: right;
+  position: absolute;
+  right: 0;
   color: white;
   font-size: 1.25rem;
   padding: .5rem 0;

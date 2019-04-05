@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Uploader from '../Uploader/Uploader';
 import './Userportal.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -21,6 +20,10 @@ class Userportal extends Component {
 	handleSongClick = (event) => {
 		this.props.loadSong(event.target.innerText);
 		this.props.onRouteChange('songView');
+	}
+
+	handleAddSong = () => {
+		this.props.onRouteChange('addSongView');
 	}
 
 	createList = () => {
@@ -46,23 +49,14 @@ class Userportal extends Component {
 		if (list.length !== 0) {
 			return list;
 		}
-		return <Row>
-		  			<Col style={{ textAlign: 'center' }}>
-			  			Add a new song
-		  			</Col>
-		  		</Row>
 	}
-
-	// createSong = (name) => {
-	// 	this.setState({db: this.props.user.songs.concat(name)});
-	// }
 
 	render() {
     return (
     	<div className="Userportal">
     		<Container>
     			<Row className="songs-container">
-    				<Col lg>
+    				<Col lg={{ order: 12}}>
           		<div className="list-container">
 	          		<h6>Member</h6>
 	          		<ul>
@@ -71,16 +65,18 @@ class Userportal extends Component {
 	          		</ul>
 	          	</div>
 	          </Col>
-        		<Col lg>
+        		<Col lg={{ order: 1}}>
           		<div className="list-container">
-	          		<h6>Owner</h6>
+	          		<h6>Owned</h6>
 	          		<ul>
 	          			{this.createList()}
 	          		</ul>
+	          		<div onClick={this.handleAddSong} className="add-song">
+		  						<FontAwesomeIcon className="add-song-icon" icon="plus" />
+								</div>
           		</div>
           	</Col>
           </Row>
-          <Uploader createSong={this.createSong} loadSong={this.props.loadSong} user={this.props.user} loadUser={this.props.loadUser} onRouteChange={this.props.onRouteChange}/>
     		</Container>
     	</div>
     );
