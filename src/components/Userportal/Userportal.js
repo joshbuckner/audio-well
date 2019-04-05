@@ -56,7 +56,7 @@ class Userportal extends Component {
     	<div className="Userportal">
     		<Container>
     			<Row className="songs-container">
-    				<Col lg={{ order: 12}}>
+        		<Col>
           		<div className="list-container">
 	          		<h6>Member</h6>
 	          		<ul>
@@ -64,9 +64,7 @@ class Userportal extends Component {
 	          			<p style={{ textAlign: 'center', fontSize: '1rem', color: 'gray' }}>Accept a song request to view songs you don't own.</p>
 	          		</ul>
 	          	</div>
-	          </Col>
-        		<Col lg={{ order: 1}}>
-          		<div className="list-container">
+	          	<div className="list-container">
 	          		<h6>Owned</h6>
 	          		<ul>
 	          			{this.createList()}
