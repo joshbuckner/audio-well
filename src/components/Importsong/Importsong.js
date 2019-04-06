@@ -15,7 +15,6 @@ class Importsong extends Component {
     	<div>
     		<Container > {/*style={{ padding: '0 15rem' }}*/}
           <Uploader createSong={this.createSong} loadSong={this.props.loadSong} user={this.props.user} loadUser={this.props.loadUser} onRouteChange={this.props.onRouteChange}/>
-        }
     		</Container>
     	</div>
     );
