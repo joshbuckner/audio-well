@@ -1,28 +1,29 @@
 .Waveform {
   font-family: sans-serif;
   text-align: center;
-  margin: .5rem auto;
-  width: 80%;
+  /*margin: .5rem auto;*/
+  width: 100%;
 }
 
 .waveform-container {
-  max-height: 5rem;
+  max-height: 3rem;
   width: 100%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: .5rem;
-  margin: .5rem 0;
+  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+  margin: 0;
 }
 
 .waveform-bg {
   clip-path: url("#waveform-mask");
-  fill: gray;
+  -webkit-clip-path: url(#waveform-mask);
+  fill: #999;
 }
 
 .waveform-progress {
   clip-path: url("#waveform-mask");
-  fill: #256EFF;
+  -webkit-clip-path: url(#waveform-mask);
+  fill: #fff;
 }
 
-.Waveform svg {
-  background-color: rgba(255,255,255,.9);
-}
+/*.Waveform svg {
+  background-color: rgba(255,255,255,.1);
+}*/

@@ -53,7 +53,7 @@ class Uploader extends Component {
     	<div>
     		<FilePond oninit={() => this.handleInit()} files={this.state.files} allowMultiple={false} name={'file'} server='http://192.168.0.27:3000/upload' ref={ref => this.pond = ref} onupdatefiles={(fileItems) => {this.setState({ files: fileItems.map(fileItem => fileItem.file) });}}/>
 	    	<div className="list-container">
-          <Form autocomplete="off">
+          <Form autoComplete="off">
             <Form.Group controlId="formGroupName">
               <Form.Label>Song Name</Form.Label>
               <Form.Control onChange={this.onNameChange} type="text" placeholder="Enter song name" />

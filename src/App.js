@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
 // import Filepicker from './components/Filepicker/Filepicker';
-import Waveform from './components/Waveform/Waveform';
+// import Waveform from './components/Waveform/Waveform';
 import Notelist from './components/Notelist/Notelist';
 import Audioplayer from './components/Audioplayer/Audioplayer';
 import Userportal from './components/Userportal/Userportal';
@@ -18,6 +18,7 @@ import Footer from './components/Footer/Footer';
 library.add(faAngleDown, faPlus, faTrash, faEdit, faEllipsisH, faUpload, faHeadphones, faFacebookF, faTwitter, faInstagram, faEnvelope);
 
 const initialState = {
+  playStatus: 'play',
 	time: '0:00',
 	route: 'signIn',
 	isSignedIn: false,
@@ -86,7 +87,7 @@ class App extends Component {
 			        
               <h3 style={{ marginTop: '4.5rem', textAlign: 'center', color: 'white' }}>{this.state.song}
               </h3>
-              <Waveform />
+              {/*<Waveform />*/}
 			        <Notelist song={this.state.song} user={this.state.user} loadUser={this.loadUser} time={this.state.time}/>
 			        <Audioplayer updateTime={this.updateTime} song={this.state.song}/>
 	          </div>

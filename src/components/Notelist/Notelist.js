@@ -167,7 +167,7 @@ class Notelist extends Component {
 						  			<Row>
 						  				<Col style={{textAlign: 'left'}}>
 												<div className="current-time" id="current-time">{this.props.time}</div>
-												<input autocomplete="off" placeholder="New Note" id="note-input" type="text" onChange={this.handleNoteInput} onKeyPress={this.handleKeyPress.bind(this)}/>
+												<input autoComplete="off" placeholder="New Note" id="note-input" type="text" onChange={this.handleNoteInput} onKeyPress={this.handleKeyPress.bind(this)}/>
 											</Col>
 											<Col xs="2" sm="2" md="1" lg="1" xl="1" style={{paddingLeft: 0}}>
 												<div onClick={this.createNote} className="add-note">

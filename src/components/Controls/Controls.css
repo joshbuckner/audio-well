@@ -1,0 +1,42 @@
+.Controls {
+	 position: absolute;
+	 bottom: 6%;
+	 pointer-events: none;
+	 margin: auto;
+	 left: 0;
+	 right: 0;
+}
+
+.Controls .Button {
+	 height: 35px;
+	 width: 35px;
+	 border: 2px solid rgb(255, 255, 255);
+	 box-sizing: border-box;
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+	 border-radius: 75px;
+	 box-shadow: 0 5px 10px 0px rgba(18, 18, 18, .125);
+	 margin: auto;
+	 pointer-events: all;
+}
+
+.Controls .Button:active {
+	 transform: scale(0.98);
+	 background: #fff;
+}
+
+.Controls .Button:active .fa {
+	 color: #2d2d2d;
+	 opacity: 1;
+}
+
+.Controls .Button .fa {
+	 color: #fff;
+	 opacity: 1;
+	 font-size: 12px;
+}
+
+.Controls .Button .fa.fa-play {
+	 margin-left: 2.5px;
+}
