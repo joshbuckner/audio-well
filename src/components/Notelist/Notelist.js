@@ -132,6 +132,7 @@ class Notelist extends Component {
 	    if (user.id) {
 	      this.props.loadUser(user);
 	    }
+	  document.getElementById('note-input').value = "";
 	  });
 	  // this.setState({ files: "" });
   }
