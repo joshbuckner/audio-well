@@ -1,5 +1,5 @@
 <h1>Audiowell</h1>
-Audiowell is web application that allows users to create time stamped notes for an audio track.
+Audiowell is web application that allows users to upload audio tracks and create time stamped notes. 
 <br>
 <br>
 <img src="https://media.giphy.com/media/4No2qHJv7yX704IBxq/giphy.gif">
