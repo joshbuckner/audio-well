@@ -33,7 +33,7 @@ Audiowell is web application that allows users to upload audio tracks and create
 
 <h2>Time Stamped Notes</h2>
 
-* Add a time stamped note
-* Click a note to seek audio
+* Add time stamped notes
+* Seek audio by clicking notes
 
 <img src="https://media.giphy.com/media/kcCwAI9G9X8vk28TfG/giphy.gif">
