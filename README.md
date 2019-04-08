@@ -27,7 +27,7 @@ Audiowell is web application that allows users to upload audio tracks and create
 <h2>Audio Player</h2>
 
 * Click an audio file to play
-* Seek track with waveform scrubber
+* Seek audio with waveform scrubber
 
 <img src="https://media.giphy.com/media/RKBI1quZoiU71a99mX/giphy.gif">
 
