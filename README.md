@@ -2,6 +2,7 @@
 Audiowell is web application that allows users to upload audio tracks and create time stamped notes. 
 <br>
 <br>
+<img src="https://media.giphy.com/media/h2fwJwMOeV1O7kEqBn/giphy.gif">
 
 <h2>Use Cases</h2>
 
@@ -11,19 +12,21 @@ Audiowell is web application that allows users to upload audio tracks and create
 
 <h2>Create An Account</h2>
 
-
+* Create an account
+* Sign in to access your audio files and notes
 
 <img src="https://media.giphy.com/media/Z8lMXmwdcPWHQEp3eN/giphy.gif">
 
 <h2>Upload An Audio File</h2>
 
-
+* Upload audio files
 
 <img src="https://media.giphy.com/media/UqBFDvzLwvELBrkuFH/giphy.gif">
 
 <h2>Play An Audio File</h2>
 
-
+* Click an audio file to play
+* Seek track with waveform scrubber
 
 <img src="https://media.giphy.com/media/RKBI1quZoiU71a99mX/giphy.gif">
 
