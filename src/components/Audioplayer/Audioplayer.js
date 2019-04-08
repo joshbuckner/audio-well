@@ -15,7 +15,6 @@ class Audioplayer extends Component {
       rawTime: 0,
       currentTime: '0:00',
       duration: 0,
-      playStatus: 'play'
     };
 	}
 
@@ -111,19 +110,6 @@ class Audioplayer extends Component {
     clearInterval(this.audioTimer);
   }
 
-  togglePlay = () => {
-    let status = this.state.playStatus;
-    let audio = document.getElementById('audio-element');
-    if(status === 'play') {
-      status = 'pause';
-      audio.play();
-    } else {
-      status = 'play';
-      audio.pause();
-    }
-    this.setState({ playStatus: status });
-  }
-
   // updateScrubber = (percent) => {
   //   // Set scrubber width
   //   let innerScrubber = document.querySelector('.Scrubber-Progress');
@@ -145,7 +131,7 @@ class Audioplayer extends Component {
     	<div className="audio-player">
         <Scrubber handleSeekAudio={this.handleSeekAudio} />
         {/*<Waveform />*/}
-        <Controls isPlaying={this.state.playStatus} onClick={this.togglePlay} />
+        <Controls isPlaying={this.props.playStatus} onClick={this.props.togglePlay} />
         <Volumeslider />
         <Timestamps duration={this.state.duration} currentTime={this.state.currentTime} />
     		<audio id="audio-element" className="audio-element" controls="controls">

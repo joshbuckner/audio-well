@@ -33,7 +33,8 @@ class Notelist extends Component {
 		let newCurrentTime = (minutes * 60) + seconds;
 
 		audio.currentTime = newCurrentTime;
-		audio.play();
+		// audio.play();
+		this.props.notePlay();
 	}
 
 	expandNote = (event) => {

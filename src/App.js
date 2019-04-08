@@ -69,6 +69,25 @@ class App extends Component {
     this.setState({ time: time });
   }
 
+  togglePlay = () => {
+    let status = this.state.playStatus;
+    let audio = document.getElementById('audio-element');
+    if(status === 'play') {
+      status = 'pause';
+      audio.play();
+    } else {
+      status = 'play';
+      audio.pause();
+    }
+    this.setState({ playStatus: status });
+  }
+
+  notePlay = () => {
+    let audio = document.getElementById('audio-element');
+    audio.play();
+    this.setState({ playStatus:'pause' });
+  }
+
   render() {
   	const { route } = this.state;
     return (
@@ -88,8 +107,8 @@ class App extends Component {
               <h3 style={{ marginTop: '4.5rem', textAlign: 'center', color: 'white' }}>{this.state.song}
               </h3>
               {/*<Waveform />*/}
-			        <Notelist song={this.state.song} user={this.state.user} loadUser={this.loadUser} time={this.state.time}/>
-			        <Audioplayer updateTime={this.updateTime} song={this.state.song}/>
+			        <Notelist song={this.state.song} user={this.state.user} loadUser={this.loadUser} time={this.state.time} notePlay={this.notePlay}/>
+			        <Audioplayer updateTime={this.updateTime} song={this.state.song} togglePlay={this.togglePlay} playStatus={this.state.playStatus}/>
 	          </div>
           	:
             ( route === 'addSongView' ? 
