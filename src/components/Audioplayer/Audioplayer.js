@@ -3,6 +3,7 @@ import axios from 'axios';
 import './Audioplayer.css';
 import Scrubber from '../Scrubber/Scrubber';
 import Controls from '../Controls/Controls';
+import Volumeslider from '../Volumeslider/Volumeslider';
 // import Waveform from '../Waveform/Waveform';
 import Timestamps from '../Timestamps/Timestamps';
 
@@ -26,6 +27,7 @@ class Audioplayer extends Component {
     document.getElementById('audio-source').src = `http://192.168.0.27:3000/public/files/${this.props.song}`;
     document.getElementById('audio-element').load();
     document.getElementById('audio-element').controls = false;
+    document.getElementById('audio-element').volume = .5;
 
     axios({url: document.getElementById('audio-source').src, responseType: "arraybuffer"}).then(response => {
       let audioData = response.data;
@@ -131,7 +133,7 @@ class Audioplayer extends Component {
   handleSeekAudio = (event) => {
     // console.log(this.state.rawTime, this.state.duration);
     let audio = document.getElementById('audio-element');
-    let percent = event.clientX / window.screen.width;
+    let percent = event.clientX / window.innerWidth;
 
     audio.currentTime = percent * this.state.duration;
     // this.setState({ playStatus: 'pause'});
@@ -144,8 +146,9 @@ class Audioplayer extends Component {
         <Scrubber handleSeekAudio={this.handleSeekAudio} />
         {/*<Waveform />*/}
         <Controls isPlaying={this.state.playStatus} onClick={this.togglePlay} />
+        <Volumeslider />
         <Timestamps duration={this.state.duration} currentTime={this.state.currentTime} />
-    		<audio id="audio-element" className="audio-element"controls="controls">
+    		<audio id="audio-element" className="audio-element" controls="controls">
           <source src="" id="audio-source" />
         </audio>
       </div>
