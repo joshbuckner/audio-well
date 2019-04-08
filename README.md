@@ -2,13 +2,14 @@
 Audiowell is web application that allows users to upload audio tracks and create time stamped notes. 
 <br>
 <br>
-<img src="https://media.giphy.com/media/KH8ruI0bRFsF9HJIVh/giphy.gif">
+<img src="https://media.giphy.com/media/kcCwAI9G9X8vk28TfG/giphy.gif">
 
 <h2>Use Cases</h2>
 
 * Vocal writing & lyric writing
-* Pre Production
-* Mixing Revisions
+* Tour preparation (independent practice)
+* Pre production
+* Mixing revisions
 
 <h2>Account</h2>
 
@@ -35,4 +36,4 @@ Audiowell is web application that allows users to upload audio tracks and create
 * Add a time stamped note
 * Click a note to seek audio
 
-<img src="https://media.giphy.com/media/KH8ruI0bRFsF9HJIVh/giphy.gif">
+<img src="https://media.giphy.com/media/kcCwAI9G9X8vk28TfG/giphy.gif">
