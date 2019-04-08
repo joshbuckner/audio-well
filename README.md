@@ -6,10 +6,10 @@ Audiowell is web application that allows users to upload audio tracks and create
 
 <h2>Use Cases</h2>
 
-* Vocal writing & lyric writing
-* Tour preparation (independent practice)
 * Pre production
 * Mixing revisions
+* Vocal writing & lyric writing
+* Independent practice
 
 <h2>Account</h2>
 
