@@ -61,7 +61,7 @@ class Userportal extends Component {
 	          		<h6>Member</h6>
 	          		<ul>
 	          			{/*this.createList()*/}
-	          			<p style={{ textAlign: 'center', fontSize: '1rem', color: 'gray' }}>Accept a song request to view songs you don't own.</p>
+	          			<p style={{ textAlign: 'center', fontSize: '1rem', color: 'gray', cursor: 'default' }}>Accept a song request to view songs you don't own.</p>
 	          		</ul>
 	          	</div>
 	          	<div className="list-container">
