@@ -142,10 +142,10 @@ class Audioplayer extends Component {
     }
     return (
       <div>
-        <div class={loadingDots}>
-          <div class="bounce1"></div>
-          <div class="bounce2"></div>
-          <div class="bounce3"></div>
+        <div className={loadingDots}>
+          <div className="bounce1"></div>
+          <div className="bounce2"></div>
+          <div className="bounce3"></div>
         </div>
       	<div className={audioPlayer}>
           <Scrubber handleSeekAudio={this.handleSeekAudio} />
