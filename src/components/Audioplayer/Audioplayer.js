@@ -15,6 +15,7 @@ class Audioplayer extends Component {
       rawTime: 0,
       currentTime: '0:00',
       duration: 0,
+      isLoaded: false
     };
 	}
 
@@ -58,6 +59,7 @@ class Audioplayer extends Component {
             width=${bucketSVGWidth - SPACE_BETWEEN_BARS}
             height=${bucketSVGHeight} />`;
         }).join('');
+        this.handleLoadPlayer();
         // every 100 milliseconds, update the waveform-progress SVG with a new width - the percentage of time elapsed on the audio file
         this.waveformUpdater = setInterval(() => {
           let audioElement = document.getElementById('audio-element');
@@ -108,6 +110,7 @@ class Audioplayer extends Component {
   componentWillUnmount() {
     clearInterval(this.waveformUpdater);
     clearInterval(this.audioTimer);
+    this.props.resetPlayer();
   }
 
   // updateScrubber = (percent) => {
@@ -126,17 +129,34 @@ class Audioplayer extends Component {
     // audio.play();
   }
 
+  handleLoadPlayer = () => {
+    this.setState({ isLoaded: true });
+  }
+
 	render() {
+    let audioPlayer = 'audio-player';
+    let loadingDots = 'spinner';
+    if (this.state.isLoaded) {
+      audioPlayer += ' animate-player';
+      loadingDots = '';
+    }
     return (
-    	<div className="audio-player">
-        <Scrubber handleSeekAudio={this.handleSeekAudio} />
-        {/*<Waveform />*/}
-        <Controls isPlaying={this.props.playStatus} onClick={this.props.togglePlay} />
-        <Volumeslider />
-        <Timestamps duration={this.state.duration} currentTime={this.state.currentTime} />
-    		<audio id="audio-element" className="audio-element" controls="controls">
-          <source src="" id="audio-source" />
-        </audio>
+      <div>
+        <div class={loadingDots}>
+          <div class="bounce1"></div>
+          <div class="bounce2"></div>
+          <div class="bounce3"></div>
+        </div>
+      	<div className={audioPlayer}>
+          <Scrubber handleSeekAudio={this.handleSeekAudio} />
+          {/*<Waveform />*/}
+          <Controls isPlaying={this.props.playStatus} togglePlay={this.props.togglePlay} />
+          <Volumeslider />
+          <Timestamps duration={this.state.duration} currentTime={this.state.currentTime} />
+      		<audio id="audio-element" className="audio-element" controls="controls">
+            <source src="" id="audio-source" />
+          </audio>
+        </div>
       </div>
     );
   }

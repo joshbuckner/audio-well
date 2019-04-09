@@ -11,7 +11,7 @@ const Controls = (props) => {
   
   return (
     <div className="Controls">
-      <div onClick={props.onClick} className="Button">
+      <div onClick={props.togglePlay} className="Button">
         <i className={classNames}></i>
       </div>
     </div>

@@ -82,6 +82,10 @@ class App extends Component {
     this.setState({ playStatus: status });
   }
 
+  resetPlayer = () => {
+    this.setState({ playStatus: 'play' });
+  }
+
   notePlay = () => {
     let audio = document.getElementById('audio-element');
     audio.play();
@@ -108,7 +112,7 @@ class App extends Component {
               </h3>
               {/*<Waveform />*/}
 			        <Notelist song={this.state.song} user={this.state.user} loadUser={this.loadUser} time={this.state.time} notePlay={this.notePlay}/>
-			        <Audioplayer updateTime={this.updateTime} song={this.state.song} togglePlay={this.togglePlay} playStatus={this.state.playStatus}/>
+			        <Audioplayer resetPlayer={this.resetPlayer} updateTime={this.updateTime} song={this.state.song} togglePlay={this.togglePlay} playStatus={this.state.playStatus}/>
 	          </div>
           	:
             ( route === 'addSongView' ? 
