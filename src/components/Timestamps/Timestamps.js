@@ -15,6 +15,7 @@ const Timestamps = (props) => {
   return (
   	<div className="Timestamps">
 			<div className="Time Time--current">{props.currentTime}</div>
+			<div className="Time Time--division">/</div>
 			<div className="Time Time--total">{convertTime(props.duration)}</div>
 		</div>
   );
