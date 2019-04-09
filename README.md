@@ -47,6 +47,6 @@ Audiowell is web application that allows users to upload audio tracks and create
 
 <h4>Version Control System</h4>
 
-* Upload a new version of a song already on Audiowell
+* Upload a new version of an already uploaded song
 * Switch between song versions in notes/player view
 * View and edit notes between different song versions
