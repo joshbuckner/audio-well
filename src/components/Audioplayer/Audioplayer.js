@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './Audioplayer.css';
+import Pinlist from '../Pinlist/Pinlist';
 import Scrubber from '../Scrubber/Scrubber';
 import Controls from '../Controls/Controls';
 import Volumeslider from '../Volumeslider/Volumeslider';
@@ -148,6 +149,7 @@ class Audioplayer extends Component {
           <div className="bounce3"></div>
         </div>
       	<div className={audioPlayer}>
+          <Pinlist song={this.props.song} user={this.props.user} duration={this.state.duration}/>
           <Scrubber handleSeekAudio={this.handleSeekAudio} />
           {/*<Waveform />*/}
           <Controls isPlaying={this.props.playStatus} togglePlay={this.props.togglePlay} />
