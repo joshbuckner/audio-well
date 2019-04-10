@@ -18,9 +18,9 @@ class Pinlist extends Component {
             <div key={z}>
               <div className={"Pinlist " + this.props.user.songs[i].notes[z].color + "__pin"} style={{ left: this.handlePinPosition(this.props.user.songs[i].notes[z].time) + "vw" }}>
                 <div className='timeline-title'>
-                  {this.props.user.songs[i].notes[z].title}
+                  {this.props.user.songs[i].notes[z].title.substring(0,3)}
                 </div>
-                <i className="fas fa-map-marker-alt"></i>
+                <i className="fas fa-slash"></i>
               </div>
              
             </div>
@@ -37,7 +37,7 @@ class Pinlist extends Component {
     let pinTime = (Number(minutes) * 60) + Number(seconds);
     let pinPos = (pinTime / this.props.duration) * 100;
     if (pinPos) {
-      return pinPos;
+      return pinPos.toFixed(2);
     }
     
   }

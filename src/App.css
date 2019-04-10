@@ -10,3 +10,7 @@ body {
 .form-container {
   position: relative;
 }
+
+.spacer {
+	height: 10rem;
+}

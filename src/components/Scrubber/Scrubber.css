@@ -8,7 +8,9 @@
 	transition: opacity 0.25s ease;
 	/*background-color: rgba(255, 255, 255, .1);*/
 	z-index: 5;
+	cursor: pointer;
 }
+
 .Scrubber .Scrubber-Progress {
 	background-color: rgb(255, 255, 255);
 	height: 100%;

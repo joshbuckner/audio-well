@@ -101,37 +101,46 @@ class App extends Component {
             <Navigation onRouteChange={this.onRouteChange}/>
             <h1 style={{ marginTop: '4.5rem', textAlign: 'center', color: 'white' }}>{this.state.user.name}'s Songs</h1>
 	          <Userportal onRouteChange={this.onRouteChange} loadSong={this.loadSong} song={this.state.song} user={this.state.user} loadUser={this.loadUser}/>
+            <div className="spacer">
+            </div>
           </div>
           : 
           ( route === 'songView' ?
           	<div>
               <Navigation onRouteChange={this.onRouteChange}/>
 		          {/*<Filepicker />*/}
-			        
               <h3 style={{ marginTop: '4.5rem', textAlign: 'center', color: 'white' }}>{this.state.song}
               </h3>
               {/*<Waveform />*/}
 			        <Notelist song={this.state.song} user={this.state.user} loadUser={this.loadUser} time={this.state.time} notePlay={this.notePlay}/>
               <Audioplayer resetPlayer={this.resetPlayer} updateTime={this.updateTime} song={this.state.song} user={this.state.user} togglePlay={this.togglePlay} playStatus={this.state.playStatus}/>
-	          </div>
+	            <div className="spacer">
+              </div>
+            </div>
           	:
             ( route === 'addSongView' ? 
               <div>
                 <Navigation onRouteChange={this.onRouteChange}/>
                 <h1 style={{ marginTop: '4.5rem', textAlign: 'center', color: 'white' }}>Add Song</h1>
                 <Importsong onRouteChange={this.onRouteChange} user={this.state.user} loadUser={this.loadUser}/>
+                <div className="spacer">
+                </div>
               </div>
               :
             	( route === 'signIn' ? 
                 <div>
                   <h1 style={{ marginTop: '4.5rem', marginBottom: '4.5rem', textAlign: 'center', color: 'white', fontSize: '3.2rem' }}>Audio<FontAwesomeIcon style={{ fontSize: '2.5rem', color: 'black' }} icon="headphones" />well</h1>
                   <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+                  <div className="spacer">
+                  </div>
                   <Footer/>
                 </div>
               :
                 <div>
                   <h1 style={{ marginTop: '4.5rem', marginBottom: '4.5rem', textAlign: 'center', color: 'white', fontSize: '3.2rem' }}>Audio<FontAwesomeIcon style={{ fontSize: '2.5rem', color: 'black' }} icon="headphones" />well</h1>
                   <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+                  <div className="spacer">
+                  </div>
                   <Footer/>
                 </div>
               )
