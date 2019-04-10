@@ -17,7 +17,7 @@ class Pinlist extends Component {
           list.push(
             <div key={z}>
               <div className={"Pinlist " + this.props.user.songs[i].notes[z].color + "__pin"} style={{ left: this.handlePinPosition(this.props.user.songs[i].notes[z].time) + "vw" }}>
-                <div style={{ color: 'white', fontSize: '14px' }}>
+                <div className='timeline-title'>
                   {this.props.user.songs[i].notes[z].title}
                 </div>
                 <i className="fas fa-map-marker-alt"></i>

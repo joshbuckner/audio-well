@@ -33,3 +33,8 @@
 .dark-theme__pin {
   color: rgb(45,45,45);
 }
+
+.timeline-title {
+	color: white;
+	font-size: 14px;
+}
