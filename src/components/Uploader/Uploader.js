@@ -17,7 +17,7 @@ class Uploader extends Component {
 
   addSong = () => {
     if (this.state.files[0]) {
-      fetch('http://192.168.0.27:3000/addsong', {
+      fetch('http://localhost:3000/addsong', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -51,7 +51,7 @@ class Uploader extends Component {
 	render() {
     return (
     	<div>
-    		<FilePond oninit={() => this.handleInit()} files={this.state.files} allowMultiple={false} name={'file'} server='http://192.168.0.27:3000/upload' ref={ref => this.pond = ref} onupdatefiles={(fileItems) => {this.setState({ files: fileItems.map(fileItem => fileItem.file) });}}/>
+    		<FilePond oninit={() => this.handleInit()} files={this.state.files} allowMultiple={false} name={'file'} server='http://localhost:3000/upload' ref={ref => this.pond = ref} onupdatefiles={(fileItems) => {this.setState({ files: fileItems.map(fileItem => fileItem.file) });}}/>
 	    	<div className="list-container">
           <Form autoComplete="off">
             <Form.Group controlId="formGroupName">
