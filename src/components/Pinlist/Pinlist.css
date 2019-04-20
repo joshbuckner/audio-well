@@ -46,9 +46,9 @@
 	font-size: 14px;
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1600px) {
 	.Pinlist {
-			transform: translateX(-1.5vw);
+			transform: translateX(-1.2vw);
 	}
 }
 
