@@ -121,7 +121,6 @@ class App extends Component {
             ( route === 'addSongView' ? 
               <div>
                 <Navigation onRouteChange={this.onRouteChange}/>
-                <h1 style={{ marginTop: '4.5rem', textAlign: 'center', color: 'white' }}>Add Song</h1>
                 <Importsong onRouteChange={this.onRouteChange} user={this.state.user} loadUser={this.loadUser}/>
                 <div className="spacer">
                 </div>
